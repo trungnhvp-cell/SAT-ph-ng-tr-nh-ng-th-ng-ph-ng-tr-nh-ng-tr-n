@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAT Math — Lines, Circles, Angles &amp; Distances | Thầy Nguyễn Hữu Trung</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'\\\\(',right:'\\\\)',display:false},{left:'\\\\[',right:'\\\\]',display:true}]});"></script>
+<style>
+  :root{--sat-blue:#1B3A6B;--sat-blue-light:#2C5AA0;--sat-blue-pale:#EAF0F9;--sat-green:#4CAF50;--sat-red:#E53935;--sat-yellow:#F5B400;--sat-bg:#F5F7FA;--sat-text:#1a2332;--sat-gray:#5b6778;--sat-gold:#F5B400;--shadow:0 2px 8px rgba(27,58,107,.08);--shadow-lg:0 6px 24px rgba(27,58,107,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter','Segoe UI',Roboto,-apple-system,sans-serif;background:var(--sat-bg);color:var(--sat-text);line-height:1.6}
+  header{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;padding:20px 32px;box-shadow:var(--shadow-lg);position:sticky;top:0;z-index:100}
+  .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand-logo{width:44px;height:44px;border-radius:10px;background:#fff;color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;letter-spacing:-1px}
+  .brand-title{font-size:20px;font-weight:700}
+  .brand-sub{font-size:12.5px;opacity:.85;font-weight:400}
+  .header-credit{font-size:12.5px;text-align:right;line-height:1.5;background:rgba(255,255,255,.12);padding:8px 16px;border-radius:10px;border-left:3px solid var(--sat-gold)}
+  .header-credit strong{color:var(--sat-gold);font-weight:800}
+  nav{background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:84px;z-index:99;overflow-x:auto}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;padding:0 16px;gap:4px}
+  .nav-btn{background:none;border:none;padding:16px 20px;font-family:inherit;font-size:14.5px;font-weight:600;color:var(--sat-gray);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s}
+  .nav-btn:hover{color:var(--sat-blue);background:var(--sat-blue-pale)}
+  .nav-btn.active{color:var(--sat-blue);border-bottom-color:var(--sat-blue);background:var(--sat-blue-pale)}
+  main{max-width:1200px;margin:0 auto;padding:32px 20px 80px}
+  .section{display:none;animation:fade .35s ease}
+  .section.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .page-title{font-size:28px;font-weight:800;color:var(--sat-blue);margin-bottom:6px}
+  .page-subtitle{color:var(--sat-gray);margin-bottom:28px;font-size:15px}
+  .card{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:var(--shadow);margin-bottom:20px;border:1px solid #eef2f8}
+  .card h3{font-size:20px;color:var(--sat-blue);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--sat-blue-pale);display:flex;align-items:center;gap:10px}
+  .card h3 .num{background:var(--sat-blue);color:#fff;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700}
+  .card h4{font-size:16px;color:var(--sat-blue-light);margin:16px 0 8px}
+  .card p,.card li{margin-bottom:8px}
+  .card ul,.card ol{padding-left:24px}
+  .card ol li,.card ul li{margin-bottom:6px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #eef2f8;vertical-align:top}
+  th{background:var(--sat-blue-pale);color:var(--sat-blue);font-weight:700;font-size:13.5px;text-transform:uppercase;letter-spacing:.5px}
+  tr:hover td{background:#fafcff}
+  .formula-box{background:linear-gradient(135deg,#f0f5ff 0%,#e6efff 100%);border-left:4px solid var(--sat-blue);border-radius:10px;padding:14px 18px;margin:12px 0;font-size:15.5px}
+  .formula-box strong{color:var(--sat-blue);font-weight:800}
+  .vocab-search{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:15px;margin-bottom:16px}
+  .vocab-search:focus{outline:none;border-color:var(--sat-blue-light)}
+  .vocab-table td:nth-child(2){font-family:'Courier New',monospace;color:var(--sat-blue);font-weight:600}
+  .speak-btn{background:none;border:none;cursor:pointer;color:var(--sat-blue);padding:4px 8px;border-radius:6px;transition:background .2s;font-size:15px}
+  .speak-btn:hover{background:var(--sat-blue-pale)}
+  .group-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+  .group-tab{padding:12px 22px;border-radius:10px;border:2px solid #e2e8f0;background:#fff;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--sat-gray);transition:all .2s}
+  .group-tab:hover{border-color:var(--sat-blue-light)}
+  .group-tab.active{background:var(--sat-blue);color:#fff;border-color:var(--sat-blue)}
+  .group-tab .badge{display:inline-block;margin-left:6px;background:rgba(255,255,255,.25);padding:1px 8px;border-radius:8px;font-size:12px}
+  .group-tab:not(.active) .badge{background:var(--sat-blue-pale);color:var(--sat-blue)}
+  .group-panel{display:none}
+  .group-panel.active{display:block}
+  .q-card{background:#fff;border-radius:14px;padding:24px 26px;box-shadow:var(--shadow);margin-bottom:18px;border-left:5px solid var(--sat-blue-light);transition:border-color .3s}
+  .q-card.correct{border-left-color:var(--sat-green)}
+  .q-card.wrong{border-left-color:var(--sat-red)}
+  .q-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .q-num{background:var(--sat-blue);color:#fff;min-width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+  .q-card.correct .q-num{background:var(--sat-green)}
+  .q-card.wrong .q-num{background:var(--sat-red)}
+  .q-text{font-size:16px;font-weight:500;flex:1}
+  .options{display:grid;gap:10px;margin-top:16px}
+  .option{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border:2px solid #e2e8f0;border-radius:10px;background:#fff;cursor:pointer;transition:all .18s;font-family:inherit;font-size:15px;text-align:left;color:var(--sat-text);width:100%}
+  .option:hover:not(.disabled){border-color:var(--sat-blue-light);background:#fafcff;transform:translateX(2px)}
+  .option .letter{background:var(--sat-blue-pale);color:var(--sat-blue);width:28px;height:28px;border-radius:7px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+  .option.correct{border-color:var(--sat-green);background:#eaf7eb}
+  .option.correct .letter{background:var(--sat-green);color:#fff}
+  .option.wrong{border-color:var(--sat-red);background:#fdeaea}
+  .option.wrong .letter{background:var(--sat-red);color:#fff}
+  .option.disabled{cursor:default}
+  .option.disabled:hover{transform:none;background:inherit}
+  .option.selected{border-color:var(--sat-blue);background:#eaf0f9}
+  .option.selected .letter{background:var(--sat-blue);color:#fff}
+  .feedback{margin-top:14px;padding:14px 18px;border-radius:10px;font-size:14.5px;display:none;animation:slideIn .3s ease}
+  @keyframes slideIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .feedback.show{display:block}
+  .feedback.ok{background:#eaf7eb;border-left:4px solid var(--sat-green);color:#1f6b24}
+  .feedback.no{background:#fdeaea;border-left:4px solid var(--sat-red);color:#8b1c1c}
+  .feedback strong{display:block;margin-bottom:6px;font-size:15px}
+  .feedback .review{margin-top:8px;padding-top:8px;border-top:1px dashed rgba(0,0,0,.12);font-size:13.5px;color:var(--sat-blue);font-weight:600}
+  .sat-hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:32px 36px;margin-bottom:24px;box-shadow:var(--shadow-lg)}
+  .sat-hero h2{font-size:24px;margin-bottom:8px;font-weight:800}
+  .sat-hero p{opacity:.9;font-size:14.5px;max-width:760px}
+  .sat-info-row{display:flex;gap:24px;margin-top:18px;flex-wrap:wrap}
+  .sat-info{background:rgba(255,255,255,.13);padding:10px 18px;border-radius:10px;font-size:13.5px}
+  .sat-info strong{font-size:17px;display:block;font-weight:800}
+  .btn{padding:11px 24px;border-radius:10px;border:none;font-family:inherit;font-size:14.5px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.3px}
+  .btn-primary{background:var(--sat-blue);color:#fff}
+  .btn-primary:hover{background:var(--sat-blue-light);transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+  .btn-primary:disabled{background:#b8c4d6;cursor:not-allowed;transform:none;box-shadow:none}
+  .btn-outline{background:#fff;color:var(--sat-blue);border:2px solid var(--sat-blue)}
+  .btn-outline:hover{background:var(--sat-blue-pale)}
+  .btn-sm{padding:7px 14px;font-size:12.5px;border-radius:8px}
+  .home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+  .home-card{background:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow);cursor:pointer;transition:all .25s;border:2px solid transparent}
+  .home-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--sat-blue-light)}
+  .home-card .icon{font-size:32px;margin-bottom:10px}
+  .home-card h4{font-size:16px;color:var(--sat-blue);margin-bottom:6px}
+  .home-card p{font-size:13.5px;color:var(--sat-gray)}
+  .hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:28px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(245,180,0,.12)}
+  .hero h1{font-size:30px;font-weight:800;margin-bottom:10px}
+  .hero p{opacity:.92;font-size:15.5px;max-width:760px;position:relative}
+  .hero-author{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;gap:14px;font-size:13.5px;position:relative}
+  .hero-author .avatar{width:44px;height:44px;border-radius:50%;background:var(--sat-gold);color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+  .hero-author strong{color:var(--sat-gold);font-weight:800;font-size:14.5px;display:block}
+  .hero-author span{opacity:.9}
+  footer{background:linear-gradient(135deg,#0f2547 0%,var(--sat-blue) 100%);color:#fff;padding:36px 32px 24px;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+  .footer-col h4{color:var(--sat-gold);font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;font-weight:800}
+  .footer-col p,.footer-col li{font-size:13.5px;opacity:.88;line-height:1.8}
+  .footer-col ul{list-style:none}
+  .footer-col ul li{cursor:pointer;transition:color .2s}
+  .footer-col ul li:hover{color:var(--sat-gold)}
+  .footer-author-card{background:rgba(255,255,255,.08);border-left:4px solid var(--sat-gold);padding:16px 20px;border-radius:10px;margin-top:8px}
+  .footer-author-card .name{font-size:16px;font-weight:800;color:#fff;margin-bottom:4px}
+  .footer-author-card .role{font-size:13px;color:var(--sat-gold);font-weight:600;margin-bottom:8px}
+  .footer-author-card .phone{font-size:14px;font-weight:700;color:#fff;display:inline-flex;align-items:center;gap:6px;background:rgba(245,180,0,.2);padding:6px 12px;border-radius:8px}
+  .footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);text-align:center;font-size:12.5px;opacity:.75;line-height:1.8}
+  .footer-bottom strong{color:var(--sat-gold);font-weight:800}
+  .sat-set-selector{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:24px}
+  .set-card{background:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow);cursor:pointer;transition:all .25s;border:2px solid transparent;border-top:5px solid var(--sat-blue);position:relative}
+  .set-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--sat-blue-light);border-top-color:var(--sat-gold)}
+  .set-card .set-badge{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);padding:4px 12px;border-radius:8px;font-size:12px;font-weight:800;letter-spacing:.5px;margin-bottom:10px}
+  .set-card h4{font-size:18px;color:var(--sat-blue);margin-bottom:8px}
+  .set-card p{font-size:13.5px;color:var(--sat-gray);margin-bottom:14px;min-height:52px}
+  .set-card .set-meta{display:flex;gap:14px;font-size:12.5px;color:var(--sat-gray);border-top:1px dashed #e2e8f0;padding-top:12px;flex-wrap:wrap}
+  .set-card .set-meta strong{color:var(--sat-blue);font-weight:800}
+  .set-card .set-start{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-weight:800;color:var(--sat-blue);font-size:14px}
+  .test-topbar{background:#fff;border-radius:14px;padding:16px 22px;box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px;border:1px solid #eef2f8;position:sticky;top:140px;z-index:50}
+  .test-set-name{font-size:16px;font-weight:800;color:var(--sat-blue)}
+  .test-progress{font-size:13px;color:var(--sat-gray);margin-top:2px}
+  .timer-wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .timer{font-family:'Courier New',monospace;font-size:24px;font-weight:800;background:var(--sat-blue);color:#fff;padding:8px 18px;border-radius:10px;letter-spacing:2px;min-width:110px;text-align:center;transition:background .3s}
+  .timer.warning{background:var(--sat-yellow);animation:pulse .8s infinite}
+  .timer.danger{background:var(--sat-red);animation:pulse .5s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+  .test-layout{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:start}
+  .test-sidebar{background:#fff;border-radius:14px;padding:18px;box-shadow:var(--shadow);border:1px solid #eef2f8;position:sticky;top:220px}
+  .test-sidebar h4{font-size:12.5px;color:var(--sat-blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--sat-blue-pale)}
+  .nav-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+  .nav-cell{aspect-ratio:1;border-radius:8px;border:2px solid #e2e8f0;background:#fff;font-family:inherit;font-weight:700;font-size:12.5px;color:var(--sat-gray);cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;padding:0}
+  .nav-cell:hover{border-color:var(--sat-blue-light)}
+  .nav-cell.answered{background:var(--sat-blue);color:#fff;border-color:var(--sat-blue)}
+  .nav-cell.current{border-color:var(--sat-gold);box-shadow:0 0 0 3px rgba(245,180,0,.3)}
+  .nav-legend{margin-top:14px;font-size:12px;color:var(--sat-gray);display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1px dashed #e2e8f0}
+  .nav-legend > div{display:flex;align-items:center;gap:8px}
+  .legend-box{width:14px;height:14px;border-radius:4px;border:2px solid #e2e8f0;background:#fff;display:inline-block}
+  .legend-box.answered{background:var(--sat-blue);border-color:var(--sat-blue)}
+  .legend-box.current{border-color:var(--sat-gold);box-shadow:0 0 0 2px rgba(245,180,0,.3)}
+  .test-main{min-width:0}
+  .test-main .q-card{margin-bottom:14px}
+  .test-nav-btns{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .test-nav-btns .btn{min-width:140px}
+  .result-hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:32px 36px;margin-bottom:22px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+  .result-hero h2{font-size:22px;margin-bottom:6px}
+  .result-hero p{opacity:.9;font-size:14px}
+  .result-score{text-align:center;background:rgba(255,255,255,.14);padding:18px 30px;border-radius:14px;border:2px solid rgba(245,180,0,.5)}
+  .result-score .num{font-size:42px;font-weight:800;color:var(--sat-gold);line-height:1}
+  .result-score .den{font-size:16px;opacity:.85;margin-top:4px}
+  .result-score .pct{font-size:14px;font-weight:700;margin-top:8px;padding:4px 12px;background:rgba(255,255,255,.2);border-radius:8px;display:inline-block}
+  .level-banner{background:#fff;border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);border-left:6px solid var(--sat-blue);display:flex;gap:20px;align-items:flex-start;margin-bottom:22px}
+  .level-icon{width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0;color:#fff}
+  .level-content{flex:1;min-width:0}
+  .level-content h3{font-size:22px;margin-bottom:8px;font-weight:800}
+  .level-content p{font-size:14.5px;color:var(--sat-text);margin-bottom:6px;line-height:1.65}
+  .level-content .level-advice{background:var(--sat-blue-pale);padding:12px 16px;border-radius:8px;margin-top:10px;font-size:14px;border-left:3px solid var(--sat-blue);line-height:1.65}
+  .result-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:22px}
+  .stat-box{background:#fff;border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);border-left:4px solid var(--sat-blue)}
+  .stat-box.green{border-left-color:var(--sat-green)}
+  .stat-box.red{border-left-color:var(--sat-red)}
+  .stat-box.yellow{border-left-color:var(--sat-yellow)}
+  .stat-box .label{font-size:11.5px;color:var(--sat-gray);text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+  .stat-box .value{font-size:26px;font-weight:800;color:var(--sat-blue);margin-top:4px;line-height:1.1}
+  .stat-box.green .value{color:var(--sat-green)}
+  .stat-box.red .value{color:var(--sat-red)}
+  .stat-box.yellow .value{color:#b8860b}
+  .stat-box .sub{font-size:12.5px;color:var(--sat-gray);margin-top:4px}
+  .result-section-title{font-size:18px;font-weight:800;color:var(--sat-blue);margin:28px 0 14px;display:flex;align-items:center;gap:10px}
+  .result-section-title .icon{background:var(--sat-blue-pale);color:var(--sat-blue);width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .time-analysis{background:#fff;border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);margin-bottom:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;border:1px solid #eef2f8}
+  .time-block{display:flex;gap:14px;align-items:flex-start}
+  .time-block .tb-icon{width:46px;height:46px;border-radius:11px;background:var(--sat-blue-pale);color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+  .time-block .tb-content{flex:1;min-width:0}
+  .time-block .tb-label{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--sat-gray);font-weight:700;margin-bottom:4px}
+  .time-block .tb-value{font-size:22px;font-weight:800;color:var(--sat-blue);line-height:1.1}
+  .time-block .tb-desc{font-size:12.5px;color:var(--sat-gray);margin-top:4px;line-height:1.5}
+  .topic-table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+  .topic-table th,.topic-table td{padding:12px 16px;text-align:left;border-bottom:1px solid #eef2f8;vertical-align:middle}
+  .topic-table th{background:var(--sat-blue-pale);color:var(--sat-blue);font-size:12px;text-transform:uppercase;letter-spacing:.5px;font-weight:800}
+  .topic-table tr:last-child td{border-bottom:none}
+  .topic-bar{height:9px;background:#e2e8f0;border-radius:5px;overflow:hidden;min-width:100px;flex:1}
+  .topic-bar-cell{display:flex;align-items:center;gap:10px}
+  .topic-bar-fill{height:100%;background:var(--sat-green);transition:width .8s ease;border-radius:5px}
+  .topic-bar-fill.warn{background:var(--sat-yellow)}
+  .topic-bar-fill.bad{background:var(--sat-red)}
+  .topic-score{font-weight:800;color:var(--sat-blue);min-width:44px;text-align:right}
+  .topic-recommend{font-size:12.5px;color:var(--sat-gray);margin-top:6px;padding:8px 12px;background:#fafcff;border-radius:6px;border-left:2px solid var(--sat-blue-light);line-height:1.5;font-style:italic}
+  .roadmap{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:var(--shadow);border-left:6px solid var(--sat-gold);margin-bottom:22px}
+  .roadmap h3{font-size:19px;color:var(--sat-blue);margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .roadmap .roadmap-sub{font-size:13.5px;color:var(--sat-gray);margin-bottom:18px;line-height:1.6}
+  .roadmap-phase{padding:18px 0;border-bottom:1px dashed #e2e8f0;display:flex;gap:18px;align-items:flex-start}
+  .roadmap-phase:last-child{border-bottom:none;padding-bottom:0}
+  .roadmap-phase .phase-num{width:48px;height:48px;border-radius:12px;background:var(--sat-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0}
+  .roadmap-phase.phase-1 .phase-num{background:var(--sat-red)}
+  .roadmap-phase.phase-2 .phase-num{background:#E8A317}
+  .roadmap-phase.phase-3 .phase-num{background:var(--sat-green)}
+  .roadmap-phase .phase-content{flex:1;min-width:0}
+  .roadmap-phase h4{font-size:15.5px;color:var(--sat-blue);margin-bottom:8px;font-weight:800;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+  .roadmap-phase .phase-time{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:6px}
+  .roadmap-phase ul{padding-left:22px;margin-top:6px}
+  .roadmap-phase li{font-size:13.5px;margin-bottom:6px;color:var(--sat-text);line-height:1.6}
+  .roadmap-phase .phase-actions{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+  .wrong-item{background:#fff;border-radius:12px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:14px;border-left:5px solid var(--sat-red)}
+  .wrong-item.unanswered{border-left-color:var(--sat-gray)}
+  .wrong-item .wrong-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+  .wrong-item .wrong-num{background:var(--sat-red);color:#fff;min-width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+  .wrong-item.unanswered .wrong-num{background:var(--sat-gray)}
+  .wrong-item .wrong-q{font-size:15px;font-weight:600;flex:1;line-height:1.55}
+  .wrong-item .topic-tag{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);font-size:11.5px;padding:2px 10px;border-radius:6px;font-weight:700;margin-top:6px}
+  .wrong-item .ans-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;font-size:14px}
+  .wrong-item .ans-box{padding:10px 14px;border-radius:8px;background:#f5f7fa;border-left:3px solid var(--sat-gray)}
+  .wrong-item .ans-box.your{background:#fdeaea;border-left-color:var(--sat-red)}
+  .wrong-item .ans-box.correct{background:#eaf7eb;border-left-color:var(--sat-green)}
+  .wrong-item .ans-box .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--sat-gray);font-weight:700;margin-bottom:4px}
+  .wrong-item .ans-box .val{font-weight:600;color:var(--sat-text)}
+  .wrong-item .exp-box{background:var(--sat-blue-pale);padding:12px 16px;border-radius:8px;font-size:14px;border-left:3px solid var(--sat-blue);margin-top:10px;line-height:1.7}
+  .wrong-item .exp-box .lbl{font-weight:800;color:var(--sat-blue);margin-bottom:4px;font-size:13px}
+  .wrong-item .review-box{margin-top:10px;font-size:13.5px;color:var(--sat-blue);font-weight:600;padding:10px 14px;background:#fafcff;border-radius:8px;border:1px dashed var(--sat-blue-light)}
+  .result-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  @media(max-width:900px){.test-layout{grid-template-columns:1fr}.test-sidebar{position:static}.nav-grid{grid-template-columns:repeat(10,1fr)}.result-hero{grid-template-columns:1fr}}
+  @media(max-width:640px){header{padding:14px 16px}.brand-title{font-size:16px}.header-credit{font-size:11.5px;padding:6px 12px;text-align:left}.nav-btn{padding:14px 12px;font-size:13px}main{padding:20px 12px 60px}.card{padding:20px 18px}.sat-hero{padding:24px 20px}.timer{font-size:20px;padding:6px 14px;min-width:90px}.hero{padding:26px 22px}.hero h1{font-size:22px}.page-title{font-size:22px}.footer-inner{grid-template-columns:1fr;gap:24px}footer{padding:28px 18px 20px}.nav-grid{grid-template-columns:repeat(6,1fr)}.wrong-item .ans-row{grid-template-columns:1fr}.result-score .num{font-size:34px}.test-topbar{position:static}.test-sidebar{position:static}.level-banner{flex-direction:column;gap:14px;padding:18px}.level-icon{width:52px;height:52px;font-size:28px}.level-content h3{font-size:18px}.roadmap{padding:20px 18px}.roadmap-phase{flex-direction:column;gap:12px}.time-analysis{padding:18px;grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-logo">SAT</div>
+      <div><div class="brand-title">SAT Math Prep</div><div class="brand-sub">Lines, Circles, Angles &amp; Distances</div></div>
+    </div>
+    <div class="header-credit">Thiết kế bởi <strong>Thầy Nguyễn Hữu Trung</strong><br>THPT Trần Phú • ☎ 0964 848 989</div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" data-tab="home">🏠 Trang chủ</button>
+    <button class="nav-btn" data-tab="knowledge">📐 Kiến thức</button>
+    <button class="nav-btn" data-tab="vocab">📚 Từ vựng</button>
+    <button class="nav-btn" data-tab="practice">✏️ Luyện tập</button>
+    <button class="nav-btn" data-tab="sat">⏱️ SAT Simulation</button>
+  </div>
+</nav>
+
+<main>
+
+<section id="home" class="section active">
+  <div class="hero">
+    <h1>Chinh phục SAT Math: Lines, Circles &amp; Distances</h1>
+    <p>Khóa ôn tập chuyên sâu chủ đề <strong>Phương trình đường thẳng, đường tròn, góc giữa hai đường thẳng, khoảng cách và ứng dụng thực tế</strong> dành cho học sinh chuẩn bị kỳ thi <strong>Digital SAT</strong>. Nội dung song ngữ Việt–Anh, 40 từ vựng có phiên âm IPA, 30 câu luyện tập tức thì và <strong>3 bộ SAT Simulation × 30 câu = 90 câu</strong> với đồng hồ, tổng kết điểm và lộ trình ôn tập cá nhân hóa.</p>
+    <div class="hero-author"><div class="avatar">NT</div><div><strong>Thầy Nguyễn Hữu Trung</strong><span>Giáo viên Toán — THPT Trần Phú • ☎ 0964 848 989</span></div></div>
+  </div>
+  <div class="home-grid">
+    <div class="home-card" onclick="switchTab('knowledge')"><div class="icon">📐</div><h4>1. Kiến thức cơ bản</h4><p>7 mục lý thuyết song ngữ: phương trình đường thẳng, đường tròn, góc, khoảng cách, vị trí tương đối, ứng dụng và tổng hợp.</p></div>
+    <div class="home-card" onclick="switchTab('vocab')"><div class="icon">📚</div><h4>2. Từ vựng chuyên ngành</h4><p>40 từ khóa SAT Math kèm phiên âm IPA, nghĩa tiếng Việt, ví dụ minh họa và phát âm tự động.</p></div>
+    <div class="home-card" onclick="switchTab('practice')"><div class="icon">✏️</div><h4>3. Luyện tập 3 nhóm</h4><p>30 câu trắc nghiệm tiếng Anh chia 3 mức độ: Cơ bản — Trung bình — Nâng cao.</p></div>
+    <div class="home-card" onclick="switchTab('sat')"><div class="icon">⏱️</div><h4>4. SAT Simulation</h4><p>90 câu hỏi chuẩn Digital SAT, đồng hồ 45 phút/bộ, tổng kết điểm và lộ trình ôn tập cá nhân hóa.</p></div>
+  </div>
+</section>
+
+<section id="knowledge" class="section">
+  <h2 class="page-title">📐 Kiến thức cơ bản</h2>
+  <p class="page-subtitle">Song ngữ Việt — Anh · Dành cho học sinh chuẩn bị thi SAT Digital</p>
+
+  <div class="card">
+    <h3><span class="num">I</span> Phương trình đường thẳng — Equation of a Line</h3>
+    <table>
+      <tr><th>Dạng</th><th>Phương trình</th><th>Ghi chú</th></tr>
+      <tr><td>Tổng quát (General)</td><td>\(ax + by + c = 0\) với \(a^2 + b^2 \ne 0\)</td><td>Vector pháp tuyến \(\vec{n} = (a; b)\)</td></tr>
+      <tr><td>Hệ số góc (Slope-intercept)</td><td>\(y = kx + m\)</td><td>\(k = \tan\alpha\) (góc với \(Ox\))</td></tr>
+      <tr><td>Qua điểm + pháp tuyến</td><td>\(a(x - x_0) + b(y - y_0) = 0\)</td><td>\(\vec{n} = (a; b)\)</td></tr>
+      <tr><td>Qua 2 điểm</td><td>\(\dfrac{x - x_A}{x_B - x_A} = \dfrac{y - y_A}{y_B - y_A}\)</td><td>Nếu \(x_B \ne x_A\), \(y_B \ne y_A\)</td></tr>
+      <tr><td>Đoạn chắn (Intercept)</td><td>\(\dfrac{x}{a} + \dfrac{y}{b} = 1\)</td><td>Cắt \(Ox\) tại \(a\), \(Oy\) tại \(b\)</td></tr>
+    </table>
+    <div class="formula-box">
+      <strong>Công thức cốt lõi:</strong> Với đường thẳng \(ax + by + c = 0\):<br>
+      • Vector pháp tuyến: \(\vec{n} = (a; b)\) • Vector chỉ phương: \(\vec{u} = (-b; a)\) hoặc \((b; -a)\)<br>
+      • Hệ số góc: \(k = -\dfrac{a}{b}\) (nếu \(b \ne 0\))
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">II</span> Phương trình đường tròn — Equation of a Circle</h3>
+    <p>Tập hợp các điểm cách đều tâm \(I(a; b)\) một khoảng \(R\) (bán kính).</p>
+    <div class="formula-box">
+      <strong>Dạng chính tắc (Standard form):</strong> \((x - a)^2 + (y - b)^2 = R^2\)<br>
+      <strong>Dạng khai triển (General form):</strong> \(x^2 + y^2 - 2ax - 2by + c = 0\)<br>
+      • Tâm \(I(a; b)\), bán kính \(R = \sqrt{a^2 + b^2 - c}\)<br>
+      • Điều kiện là đường tròn: \(a^2 + b^2 - c > 0\)
+    </div>
+    <div class="formula-box">
+      <strong>Ví dụ:</strong> \(x^2 + y^2 - 6x + 4y - 12 = 0\).<br>
+      Hoàn thành bình phương: \((x - 3)^2 + (y + 2)^2 = 25\).<br>
+      ⇒ Tâm \(I(3; -2)\), bán kính \(R = 5\).
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">III</span> Góc giữa hai đường thẳng — Angle Between Two Lines</h3>
+    <p>Cho \(\Delta_1: a_1x + b_1y + c_1 = 0\) và \(\Delta_2: a_2x + b_2y + c_2 = 0\), góc \(\varphi\) giữa hai đường thẳng được tính bởi:</p>
+    <div class="formula-box">
+      <strong>Công thức:</strong> \(\cos\varphi = \dfrac{|a_1a_2 + b_1b_2|}{\sqrt{a_1^2 + b_1^2}\cdot\sqrt{a_2^2 + b_2^2}}\)<br>
+      Nếu dùng hệ số góc: \(\tan\varphi = \left|\dfrac{k_1 - k_2}{1 + k_1k_2}\right|\) (khi \(k_1k_2 \ne -1\))
+    </div>
+    <ul>
+      <li><strong>Hai đường thẳng vuông góc:</strong> \(a_1a_2 + b_1b_2 = 0\) (hay \(k_1k_2 = -1\)).</li>
+      <li><strong>Hai đường thẳng song song:</strong> \(\dfrac{a_1}{a_2} = \dfrac{b_1}{b_2} \ne \dfrac{c_1}{c_2}\).</li>
+      <li><strong>Hai đường thẳng trùng nhau:</strong> \(\dfrac{a_1}{a_2} = \dfrac{b_1}{b_2} = \dfrac{c_1}{c_2}\).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">IV</span> Khoảng cách — Distance</h3>
+    <p>Khoảng cách từ điểm \(M(x_0; y_0)\) đến đường thẳng \(\Delta: ax + by + c = 0\) là:</p>
+    <div class="formula-box">
+      <strong>Công thức khoảng cách:</strong> \(d(M, \Delta) = \dfrac{|ax_0 + by_0 + c|}{\sqrt{a^2 + b^2}}\)
+    </div>
+    <div class="formula-box">
+      <strong>Khoảng cách giữa hai đường thẳng song song:</strong> \(\Delta_1: ax + by + c_1 = 0\) và \(\Delta_2: ax + by + c_2 = 0\):<br>
+      \(d(\Delta_1, \Delta_2) = \dfrac{|c_1 - c_2|}{\sqrt{a^2 + b^2}}\)
+    </div>
+    <div class="formula-box">
+      <strong>Ví dụ:</strong> Khoảng cách từ \(M(3; 4)\) đến \(3x + 4y - 10 = 0\):<br>
+      \(d = \dfrac{|3\cdot 3 + 4\cdot 4 - 10|}{\sqrt{9 + 16}} = \dfrac{|9 + 16 - 10|}{5} = \dfrac{15}{5} = 3\).
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">V</span> Vị trí tương đối — Relative Positions</h3>
+    <h4>Đường thẳng và đường tròn</h4>
+    <p>Cho đường thẳng \(\Delta\) và đường tròn \((C)\) tâm \(I\), bán kính \(R\). Gọi \(d = d(I, \Delta)\):</p>
+    <table>
+      <tr><th>Điều kiện</th><th>Vị trí tương đối</th><th>Số giao điểm</th></tr>
+      <tr><td>\(d > R\)</td><td>Không cắt nhau</td><td>0</td></tr>
+      <tr><td>\(d = R\)</td><td>Tiếp xúc (tiếp tuyến)</td><td>1</td></tr>
+      <tr><td>\(d < R\)</td><td>Cắt nhau tại 2 điểm</td><td>2</td></tr>
+    </table>
+    <h4>Hai đường tròn</h4>
+    <p>Cho \((C_1)\) tâm \(I_1\), bán kính \(R_1\) và \((C_2)\) tâm \(I_2\), bán kính \(R_2\), \(d = I_1I_2\):</p>
+    <ul>
+      <li>\(d > R_1 + R_2\): ngoài nhau (0 điểm chung).</li>
+      <li>\(d = R_1 + R_2\): tiếp xúc ngoài (1 điểm chung).</li>
+      <li>\(|R_1 - R_2| < d < R_1 + R_2\): cắt nhau tại 2 điểm.</li>
+      <li>\(d = |R_1 - R_2|\): tiếp xúc trong (1 điểm chung).</li>
+      <li>\(d < |R_1 - R_2|\): chứa nhau (0 điểm chung).</li>
+    </ul>
+    <div class="formula-box">
+      <strong>Tiếp tuyến với đường tròn:</strong> Tiếp tuyến tại \(M(x_0; y_0)\) của \((C): (x - a)^2 + (y - b)^2 = R^2\) là:<br>
+      \((x_0 - a)(x - a) + (y_0 - b)(y - b) = R^2\)
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">VI</span> Ứng dụng thực tế — Real-World Applications</h3>
+    <table>
+      <tr><th>Lĩnh vực</th><th>Bài toán</th><th>Liên hệ</th></tr>
+      <tr><td>GPS / Định vị</td><td>Tìm vị trí từ khoảng cách đến các trạm</td><td>Giao của các đường tròn</td></tr>
+      <tr><td>Xây dựng</td><td>Khoảng cách ngắn nhất từ điểm đến đường</td><td>Công thức khoảng cách</td></tr>
+      <tr><td>Giao thông</td><td>Góc giữa hai tuyến đường</td><td>Công thức góc</td></tr>
+      <tr><td>Robot / Tự hành</td><td>Đường đi ngắn nhất tránh vật cản</td><td>Khoảng cách điểm - đường</td></tr>
+      <tr><td>Đồ họa máy tính</td><td>Phát hiện va chạm (collision detection)</td><td>Khoảng cách điểm - đường tròn</td></tr>
+      <tr><td>Quy hoạch</td><td>Vị trí trạm cứu hỏa tối ưu</td><td>Tâm đường tròn ngoại tiếp</td></tr>
+    </table>
+    <div class="formula-box">
+      <strong>Quy trình giải bài toán thực tế:</strong><br>
+      ① Đọc đề, chọn hệ trục tọa độ phù hợp.<br>
+      ② Xác định điểm, đường thẳng, đường tròn liên quan.<br>
+      ③ Viết phương trình, sử dụng công thức khoảng cách/góc.<br>
+      ④ Giải và kiểm tra điều kiện thực tế.<br>
+      ⑤ Kết luận có đơn vị.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">VII</span> Tổng hợp &amp; Mẹo làm bài SAT — Summary &amp; SAT Tips</h3>
+    <ul>
+      <li><strong>Nhận dạng nhanh:</strong> \(Ax + By + C = 0\) (đường thẳng), \(x^2 + y^2 + Dx + Ey + F = 0\) (đường tròn).</li>
+      <li><strong>Hệ số góc:</strong> \(k = -A/B\) với đường thẳng \(Ax + By + C = 0\).</li>
+      <li><strong>Vuông góc:</strong> \(k_1 k_2 = -1\) hoặc \(A_1A_2 + B_1B_2 = 0\).</li>
+      <li><strong>Song song:</strong> cùng hệ số góc, khác tung độ gốc.</li>
+      <li><strong>Khoảng cách:</strong> nhớ công thức có dấu giá trị tuyệt đối ở tử số.</li>
+      <li><strong>Đường tròn:</strong> hoàn thành bình phương để tìm tâm và bán kính nhanh.</li>
+      <li><strong>Tiếp tuyến:</strong> bán kính vuông góc với tiếp tuyến tại tiếp điểm.</li>
+    </ul>
+    <div class="formula-box">
+      <strong>Công thức vàng cần nhớ:</strong><br>
+      • Khoảng cách: \(d = \dfrac{|ax_0 + by_0 + c|}{\sqrt{a^2 + b^2}}\)<br>
+      • Góc: \(\cos\varphi = \dfrac{|a_1a_2 + b_1b_2|}{\sqrt{a_1^2 + b_1^2}\sqrt{a_2^2 + b_2^2}}\)<br>
+      • Đường tròn: \((x - a)^2 + (y - b)^2 = R^2\)<br>
+      • Tiếp tuyến: \((x_0 - a)(x - a) + (y_0 - b)(y - b) = R^2\)
+    </div>
+  </div>
+</section>
+
+<section id="vocab" class="section">
+  <h2 class="page-title">📚 Hệ thống từ vựng SAT Math</h2>
+  <p class="page-subtitle">40 từ khóa chuyên ngành kèm phiên âm IPA — Nhấn 🔊 để nghe phát âm</p>
+  <div class="card">
+    <input type="text" id="vocabSearch" class="vocab-search" placeholder="🔍 Tìm kiếm từ vựng (tiếng Anh hoặc tiếng Việt)...">
+    <div style="overflow-x:auto">
+      <table class="vocab-table" id="vocabTable">
+        <thead><tr><th>#</th><th>English</th><th>Phiên âm (IPA)</th><th>Nghĩa</th><th>Ví dụ</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="practice" class="section">
+  <h2 class="page-title">✏️ Luyện tập trắc nghiệm</h2>
+  <p class="page-subtitle">30 câu hỏi tiếng Anh · Chấm điểm ngay · Gợi ý ôn lại lý thuyết nếu sai</p>
+  <div class="group-tabs">
+    <button class="group-tab active" data-group="1">🟢 Nhóm 1 — Cơ bản <span class="badge">10</span></button>
+    <button class="group-tab" data-group="2">🟡 Nhóm 2 — Trung bình <span class="badge">10</span></button>
+    <button class="group-tab" data-group="3">🔴 Nhóm 3 — Nâng cao <span class="badge">10</span></button>
+  </div>
+  <div class="group-panel active" id="panel-1"></div>
+  <div class="group-panel" id="panel-2"></div>
+  <div class="group-panel" id="panel-3"></div>
+</section>
+
+<section id="sat" class="section">
+  <h2 class="page-title">⏱️ SAT Digital Simulation</h2>
+  <p class="page-subtitle">3 bộ đề × 30 câu — Mô phỏng cấu trúc Digital SAT Math · Đồng hồ 45 phút</p>
+  <div class="sat-hero">
+    <h2>📘 Digital SAT Math — Lines, Circles, Angles &amp; Distances</h2>
+    <p>Mỗi bộ gồm <strong>30 câu hỏi tuyển chọn</strong>, thời gian <strong>45 phút</strong>. Sau khi nộp bài, bạn nhận <strong>bảng tổng kết điểm</strong>, <strong>đánh giá năng lực</strong>, <strong>lộ trình ôn tập cá nhân hóa</strong> và <strong>phân tích chi tiết từng câu sai</strong>.</p>
+    <div class="sat-info-row">
+      <div class="sat-info"><strong>90</strong>Câu hỏi (3 bộ)</div>
+      <div class="sat-info"><strong>45:00</strong>Mỗi bộ</div>
+      <div class="sat-info"><strong>Calculator</strong>Allowed</div>
+      <div class="sat-info"><strong>A–D</strong>4 lựa chọn</div>
+    </div>
+  </div>
+  <div id="satSetSelector" class="sat-set-selector"></div>
+  <div id="satTestScreen" style="display:none">
+    <div class="test-topbar">
+      <div>
+        <div class="test-set-name" id="testSetName">Bộ 1</div>
+        <div class="test-progress" id="testProgress">Câu 1 / 30 · Đã trả lời 0/30</div>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer" id="testTimer">45:00</div>
+        <button class="btn btn-primary" id="btnSubmitTest">📝 Nộp bài</button>
+        <button class="btn btn-outline" id="btnForceResult">📊 Xem kết quả ngay</button>
+        <button class="btn btn-outline" id="btnQuitTest">✕ Thoát</button>
+      </div>
+    </div>
+    <div class="test-layout">
+      <aside class="test-sidebar">
+        <h4>Bảng câu hỏi</h4>
+        <div class="nav-grid" id="navGrid"></div>
+        <div class="nav-legend">
+          <div><span class="legend-box current"></span> Câu đang xem</div>
+          <div><span class="legend-box answered"></span> Đã trả lời</div>
+          <div><span class="legend-box"></span> Chưa trả lời</div>
+        </div>
+      </aside>
+      <div class="test-main">
+        <div class="q-card" id="testQuestionCard">
+          <div class="q-head"><div class="q-num" id="testQNum">1</div><div class="q-text" id="testQText"></div></div>
+          <div class="options" id="testOptions"></div>
+        </div>
+        <div class="test-nav-btns">
+          <button class="btn btn-outline" id="btnPrev">← Câu trước</button>
+          <button class="btn btn-primary" id="btnNext">Câu tiếp →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="satResultScreen" style="display:none"></div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>📘 Về khóa học</h4>
+      <p>Web ôn thi SAT Math chuyên đề <strong>Lines, Circles, Angles &amp; Distances</strong> — Phương trình đường thẳng, đường tròn, góc, khoảng cách và ứng dụng thực tế.</p>
+      <div class="footer-author-card"><div class="name">👨‍🏫 Thầy Nguyễn Hữu Trung</div><div class="role">Giáo viên Toán — THPT Trần Phú</div><div class="phone">📞 0964 848 989</div></div>
+    </div>
+    <div class="footer-col">
+      <h4>🧭 Điều hướng</h4>
+      <ul>
+        <li onclick="switchTab('home')">🏠 Trang chủ</li>
+        <li onclick="switchTab('knowledge')">📐 Kiến thức cơ bản</li>
+        <li onclick="switchTab('vocab')">📚 Từ vựng SAT Math</li>
+        <li onclick="switchTab('practice')">✏️ Luyện tập 3 nhóm</li>
+        <li onclick="switchTab('sat')">⏱️ SAT Simulation</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>📞 Liên hệ</h4>
+      <ul>
+        <li>👤 <strong>Thầy Nguyễn Hữu Trung</strong></li>
+        <li>🏫 THPT Trần Phú</li>
+        <li>☎️ 0964 848 989</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <strong>Thầy Nguyễn Hữu Trung — THPT Trần Phú</strong></p>
+    <p style="margin-top:6px">Made with ❤️ for high school students preparing for the Digital SAT</p>
+  </div>
+</footer>
+
+<script>
+/* ============ TAB SWITCHING ============ */
+function switchTab(tab){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  document.querySelector('.nav-btn[data-tab="'+tab+'"]').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.nav-btn').forEach(btn=>{btn.addEventListener('click',()=>switchTab(btn.dataset.tab));});
+
+/* ============ SOUND ============ */
+let audioCtx=null;
+function getCtx(){if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended') audioCtx.resume();return audioCtx;}
+function playDing(){try{const ctx=getCtx();[880,1320].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.setValueAtTime(f,ctx.currentTime+i*0.08);g.gain.setValueAtTime(0.18,ctx.currentTime+i*0.08);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.08+0.35);o.start(ctx.currentTime+i*0.08);o.stop(ctx.currentTime+i*0.08+0.4);});}catch(e){}}
+function playBuzz(){try{const ctx=getCtx();const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sawtooth';o.frequency.setValueAtTime(180,ctx.currentTime);o.frequency.exponentialRampToValueAtTime(90,ctx.currentTime+0.3);g.gain.setValueAtTime(0.15,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.35);o.start(ctx.currentTime);o.stop(ctx.currentTime+0.4);}catch(e){}}
+function playFanfare(){try{const ctx=getCtx();[523,659,784,1046].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.setValueAtTime(f,ctx.currentTime+i*0.12);g.gain.setValueAtTime(0.2,ctx.currentTime+i*0.12);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.12+0.5);o.start(ctx.currentTime+i*0.12);o.stop(ctx.currentTime+i*0.12+0.6);});}catch(e){}}
+
+/* ============ VOCABULARY ============ */
+const vocab=[
+  ["line","/laɪn/","đường thẳng","The line \\(y = 2x + 1\\)."],
+  ["equation","/ɪˈkweɪʒn/","phương trình","Write the equation of a line."],
+  ["slope","/sloʊp/","hệ số góc","The slope of \\(y = 3x - 2\\) is 3."],
+  ["intercept","/ˌɪntərˈsept/","tung độ gốc","The y-intercept is 5."],
+  ["circle","/ˈsɜːrkl/","đường tròn","A circle with radius 3."],
+  ["radius","/ˈreɪdiəs/","bán kính","The radius of \\(x^2 + y^2 = 9\\) is 3."],
+  ["center","/ˈsentər/","tâm","The center of the circle."],
+  ["tangent","/ˈtændʒənt/","tiếp tuyến","The tangent line touches at one point."],
+  ["secant","/ˈsiːkænt/","cát tuyến","A secant line cuts the circle twice."],
+  ["chord","/kɔːrd/","dây cung","A chord connects two points on a circle."],
+  ["distance","/ˈdɪstəns/","khoảng cách","Find the distance from point to line."],
+  ["perpendicular","/ˌpɜːrpənˈdɪkjələr/","vuông góc","Two perpendicular lines."],
+  ["parallel","/ˈpærəlel/","song song","Parallel lines have the same slope."],
+  ["angle","/ˈæŋɡl/","góc","The angle between two lines."],
+  ["bisector","/baɪˈsektər/","đường phân giác","The angle bisector."],
+  ["coefficient","/ˌkoʊɪˈfɪʃnt/","hệ số","The coefficient of \\(x\\) is 2."],
+  ["vector","/ˈvektər/","vectơ","A normal vector."],
+  ["normal vector","/ˈnɔːrml ˈvektər/","vectơ pháp tuyến","\\(\\vec{n} = (a; b)\\)."],
+  ["direction vector","/dəˈrekʃn ˈvektər/","vectơ chỉ phương","\\(\\vec{u} = (-b; a)\\)."],
+  ["origin","/ˈɔːrɪdʒɪn/","gốc tọa độ","The origin \\(O(0; 0)\\)."],
+  ["coordinate","/koʊˈɔːrdɪnət/","tọa độ","The coordinates of a point."],
+  ["midpoint","/ˈmɪdpɔɪnt/","trung điểm","The midpoint of AB."],
+  ["segment","/ˈseɡmənt/","đoạn thẳng","Segment AB."],
+  ["intersection","/ˌɪntərˈsekʃn/","giao điểm","Find the intersection points."],
+  ["collinear","/kəˈlɪniər/","thẳng hàng","Three collinear points."],
+  ["graph","/ɡræf/","đồ thị","Graph the line."],
+  ["axis","/ˈæksɪs/","trục","The x-axis and y-axis."],
+  ["horizontal","/ˌhɔːrɪˈzɑːntl/","nằm ngang","A horizontal line."],
+  ["vertical","/ˈvɜːrtɪkl/","thẳng đứng","A vertical line."],
+  ["quadrant","/ˈkwɑːdrənt/","góc phần tư","The first quadrant."],
+  ["point","/pɔɪnt/","điểm","Point A(1; 2)."],
+  ["plane","/pleɪn/","mặt phẳng","The coordinate plane."],
+  ["symmetric","/sɪˈmetrɪk/","đối xứng","The circle is symmetric."],
+  ["perpendicular bisector","/ˌpɜːrpənˈdɪkjələr baɪˈsektər/","đường trung trực","The perpendicular bisector of AB."],
+  ["standard form","/ˈstændərd fɔːrm/","dạng chính tắc","Standard form of a circle."],
+  ["general form","/ˈdʒenrəl fɔːrm/","dạng tổng quát","General form of a line."],
+  ["geometric","/ˌdʒiːəˈmetrɪk/","hình học","Geometric interpretation."],
+  ["application","/ˌæplɪˈkeɪʃn/","ứng dụng","Real-world application."],
+  ["trajectory","/trəˈdʒektəri/","quỹ đạo","The trajectory of a moving object."],
+  ["shortest path","/ˈʃɔːrtɪst pæθ/","đường đi ngắn nhất","Find the shortest path."]
+];
+
+function renderVocab(filter){
+  filter = filter || "";
+  const tbody=document.querySelector('#vocabTable tbody');
+  tbody.innerHTML='';
+  const f=filter.toLowerCase().trim();
+  vocab.forEach((v,i)=>{
+    if(f && !(v[0].toLowerCase().indexOf(f)>=0||v[2].toLowerCase().indexOf(f)>=0)) return;
+    const tr=document.createElement('tr');
+    tr.innerHTML='<td>'+(i+1)+'</td><td>'+v[0]+'</td><td>'+v[1]+'</td><td>'+v[2]+'</td><td>'+v[3]+'</td><td><button class="speak-btn" data-word="'+v[0]+'" title="Phát âm">🔊</button></td>';
+    tbody.appendChild(tr);
+  });
+  if(window.renderMathInElement){renderMathInElement(tbody,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+}
+document.getElementById('vocabSearch').addEventListener('input',function(e){renderVocab(e.target.value);});
+document.addEventListener('click',function(e){
+  if(e.target.classList.contains('speak-btn')){
+    const word=e.target.dataset.word;
+    if('speechSynthesis' in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(word);u.lang='en-US';u.rate=0.9;speechSynthesis.speak(u);}
+  }
+});
+renderVocab();
+
+/* ============ PRACTICE DATA 30 câu ============ */
+const practiceData={
+  1:[
+    {q:"The slope of the line through \\(A(1; 2)\\) and \\(B(4; 8)\\) is:",opts:["1","2","3","\\(1/2\\)"],ans:1,exp:"\\(m = \\dfrac{8 - 2}{4 - 1} = \\dfrac{6}{3} = 2\\).",review:"Ôn mục I — Phương trình đường thẳng"},
+    {q:"The line \\(3x - 2y + 6 = 0\\) has a normal vector:",opts:["\\((3; -2)\\)","\\((3; 2)\\)","\\((-3; 2)\\)","\\((2; 3)\\)"],ans:0,exp:"Phương trình \\(ax + by + c = 0\\) có vector pháp tuyến \\(\\vec{n} = (a; b) = (3; -2)\\).",review:"Ôn mục I"},
+    {q:"The slope of the line \\(2x + 3y - 6 = 0\\) is:",opts:["\\(\\dfrac{2}{3}\\)","\\(-\\dfrac{2}{3}\\)","\\(\\dfrac{3}{2}\\)","\\(-\\dfrac{3}{2}\\)"],ans:1,exp:"\\(k = -\\dfrac{a}{b} = -\\dfrac{2}{3}\\).",review:"Ôn mục I"},
+    {q:"The circle \\((x - 2)^2 + (y + 3)^2 = 16\\) has center and radius:",opts:["\\((2; -3), R = 4\\)","\\((-2; 3), R = 4\\)","\\((2; -3), R = 16\\)","\\((-2; 3), R = 16\\)"],ans:0,exp:"Dạng \\((x - a)^2 + (y - b)^2 = R^2\\): tâm \\((2; -3)\\), \\(R = 4\\).",review:"Ôn mục II — Đường tròn"},
+    {q:"The circle \\(x^2 + y^2 - 6x + 4y - 12 = 0\\) has center:",opts:["\\((3; -2)\\)","\\((-3; 2)\\)","\\((3; 2)\\)","\\((-3; -2)\\)"],ans:0,exp:"\\((x - 3)^2 + (y + 2)^2 = 25\\). Tâm \\((3; -2)\\), \\(R = 5\\).",review:"Ôn mục II"},
+    {q:"The distance from \\(M(3; 4)\\) to the line \\(3x + 4y - 10 = 0\\) is:",opts:["1","2","3","5"],ans:2,exp:"\\(d = \\dfrac{|3\\cdot 3 + 4\\cdot 4 - 10|}{\\sqrt{9 + 16}} = \\dfrac{15}{5} = 3\\).",review:"Ôn mục IV — Khoảng cách"},
+    {q:"The line \\(y = 4x + 7\\) has slope:",opts:["4","7","\\(1/4\\)","\\(-4\\)"],ans:0,exp:"Dạng \\(y = kx + m\\): hệ số góc \\(k = 4\\).",review:"Ôn mục I"},
+    {q:"The line through \\(A(1; 2)\\) with slope 3 has equation:",opts:["\\(y = 3x - 1\\)","\\(y = 3x + 1\\)","\\(y = -3x + 1\\)","\\(y = 2x + 3\\)"],ans:0,exp:"\\(y - 2 = 3(x - 1) \\Rightarrow y = 3x - 1\\).",review:"Ôn mục I"},
+    {q:"The lines \\(y = 2x + 1\\) and \\(y = 2x - 3\\) are:",opts:["Perpendicular","Parallel","Intersecting","Coincident"],ans:1,exp:"Cùng hệ số góc \\(k = 2\\), khác tung độ gốc → song song.",review:"Ôn mục III — Góc"},
+    {q:"The angle between \\(y = x\\) and \\(y = -x\\) is:",opts:["\\(30^\\circ\\)","\\(45^\\circ\\)","\\(60^\\circ\\)","\\(90^\\circ\\)"],ans:3,exp:"\\(k_1 k_2 = 1 \\cdot (-1) = -1\\) → vuông góc, góc \\(= 90^\\circ\\).",review:"Ôn mục III"}
+  ],
+  2:[
+    {q:"The line through \\(M(2; -1)\\) perpendicular to \\(y = 2x + 1\\) is:",opts:["\\(x + 2y = 0\\)","\\(x - 2y = 0\\)","\\(2x + y = 0\\)","\\(2x - y = 0\\)"],ans:0,exp:"Hệ số góc vuông góc: \\(k = -1/2\\). \\(y + 1 = -\\dfrac{1}{2}(x - 2) \\Rightarrow x + 2y = 0\\).",review:"Ôn mục I & III"},
+    {q:"The distance from the origin to the line \\(4x - 3y + 10 = 0\\) is:",opts:["1","2","3","4"],ans:1,exp:"\\(d = \\dfrac{|10|}{\\sqrt{16 + 9}} = \\dfrac{10}{5} = 2\\).",review:"Ôn mục IV"},
+    {q:"The angle between \\(\\sqrt{3}x - y + 1 = 0\\) and \\(x - \\sqrt{3}y + 2 = 0\\) is:",opts:["\\(30^\\circ\\)","\\(45^\\circ\\)","\\(60^\\circ\\)","\\(90^\\circ\\)"],ans:0,exp:"\\(\\cos\\varphi = \\dfrac{|\\sqrt{3} + \\sqrt{3}|}{2 \\cdot 2} = \\dfrac{\\sqrt{3}}{2} \\Rightarrow \\varphi = 30^\\circ\\).",review:"Ôn mục III"},
+    {q:"The tangent to the circle \\(x^2 + y^2 = 25\\) at \\(A(3; 4)\\) is:",opts:["\\(3x + 4y = 25\\)","\\(4x + 3y = 25\\)","\\(3x - 4y = 25\\)","\\(4x - 3y = 25\\)"],ans:0,exp:"Tiếp tuyến tại \\((x_0; y_0)\\): \\(x_0 x + y_0 y = R^2 \\Rightarrow 3x + 4y = 25\\).",review:"Ôn mục V — Vị trí tương đối"},
+    {q:"The lines \\(2x + ky + 1 = 0\\) and \\(3x - 2y + 5 = 0\\) are perpendicular when \\(k =\\):",opts:["3","\\(-3\\)","6","\\(-6\\)"],ans:0,exp:"\\(2 \\cdot 3 + k \\cdot (-2) = 0 \\Rightarrow 6 - 2k = 0 \\Rightarrow k = 3\\).",review:"Ôn mục III"},
+    {q:"The circle with diameter \\(AB\\), \\(A(1; 2)\\), \\(B(5; 6)\\) has equation:",opts:["\\((x - 3)^2 + (y - 4)^2 = 8\\)","\\((x - 3)^2 + (y - 4)^2 = 16\\)","\\((x - 3)^2 + (y - 4)^2 = 4\\)","\\((x + 3)^2 + (y + 4)^2 = 8\\)"],ans:0,exp:"Tâm \\(I(3; 4)\\), \\(R = \\sqrt{(5-3)^2 + (6-4)^2} = \\sqrt{8}\\). Phương trình: \\((x - 3)^2 + (y - 4)^2 = 8\\).",review:"Ôn mục II"},
+    {q:"The distance between the parallel lines \\(x + 2y - 3 = 0\\) and \\(x + 2y + 7 = 0\\) is:",opts:["\\(2\\sqrt{5}\\)","\\(4\\sqrt{5}\\)","\\(\\sqrt{5}\\)","\\(5\\sqrt{5}\\)"],ans:0,exp:"\\(d = \\dfrac{|-3 - 7|}{\\sqrt{1 + 4}} = \\dfrac{10}{\\sqrt{5}} = 2\\sqrt{5}\\).",review:"Ôn mục IV"},
+    {q:"The circle \\((x - 1)^2 + (y - 2)^2 = 9\\) and the line \\(x - y + 7 = 0\\). Relative position?",opts:["2 intersection points","1 tangent point","0 intersection points","Infinitely many"],ans:2,exp:"\\(d = \\dfrac{|1 - 2 + 7|}{\\sqrt{2}} = \\dfrac{6}{\\sqrt{2}} = 3\\sqrt{2} \\approx 4.24 > R = 3\\) → không cắt.",review:"Ôn mục V"},
+    {q:"The line through \\(A(1; 1)\\) with normal vector \\((2; -1)\\) is:",opts:["\\(2x - y - 1 = 0\\)","\\(2x + y - 1 = 0\\)","\\(x - 2y + 1 = 0\\)","\\(x + 2y - 3 = 0\\)"],ans:0,exp:"\\(2(x - 1) - 1(y - 1) = 0 \\Rightarrow 2x - y - 1 = 0\\).",review:"Ôn mục I"},
+    {q:"The lines \\(y = 3x - 2\\) and \\(y = 3x + 5\\) are:",opts:["Perpendicular","Parallel","Coincident","Intersecting at 1 point"],ans:1,exp:"Cùng hệ số góc 3, khác tung độ gốc → song song.",review:"Ôn mục III"}
+  ],
+  3:[
+    {q:"The line through \\(M(2; 3)\\) making a \\(45^\\circ\\) angle with \\(y = x\\) is:",opts:["\\(y = 3\\)","\\(y = 2x - 1\\)","\\(y = -x + 5\\)","\\(y = x + 1\\)"],ans:0,exp:"\\(\\tan 45^\\circ = \\dfrac{|k - 1|}{|1 + k|} = 1 \\Rightarrow k = 0\\). Đường thẳng \\(y = 3\\).",review:"Ôn mục III"},
+    {q:"A circle tangent to both axes with center in the first quadrant and \\(R = 3\\) has equation:",opts:["\\((x - 3)^2 + (y - 3)^2 = 9\\)","\\((x + 3)^2 + (y + 3)^2 = 9\\)","\\((x - 3)^2 + (y + 3)^2 = 9\\)","\\((x + 3)^2 + (y - 3)^2 = 9\\)"],ans:0,exp:"Tâm \\((3; 3)\\) (góc phần tư I), \\(R = 3\\). Phương trình: \\((x - 3)^2 + (y - 3)^2 = 9\\).",review:"Ôn mục II & V"},
+    {q:"The distance from \\(A(1; 2)\\) to the line \\(2x - y + 1 = 0\\) is:",opts:["\\(\\dfrac{\\sqrt{5}}{5}\\)","\\(\\dfrac{2\\sqrt{5}}{5}\\)","\\(\\dfrac{3\\sqrt{5}}{5}\\)","\\(\\dfrac{4\\sqrt{5}}{5}\\)"],ans:0,exp:"\\(d = \\dfrac{|2 \\cdot 1 - 2 + 1|}{\\sqrt{4 + 1}} = \\dfrac{1}{\\sqrt{5}} = \\dfrac{\\sqrt{5}}{5}\\).",review:"Ôn mục IV"},
+    {q:"The slope of a line perpendicular to \\(3x - 4y + 5 = 0\\) is:",opts:["\\(\\dfrac{3}{4}\\)","\\(-\\dfrac{3}{4}\\)","\\(\\dfrac{4}{3}\\)","\\(-\\dfrac{4}{3}\\)"],ans:3,exp:"Hệ số góc \\(k_1 = \\dfrac{3}{4}\\). Vuông góc: \\(k_2 = -\\dfrac{4}{3}\\).",review:"Ôn mục I & III"},
+    {q:"The circle \\((x - 1)^2 + (y + 2)^2 = 4\\) and the line \\(x + y - 2 = 0\\). Relative position?",opts:["0 intersection points","1 tangent point","2 intersection points","Infinitely many"],ans:0,exp:"\\(d = \\dfrac{|1 - 2 - 2|}{\\sqrt{2}} = \\dfrac{3}{\\sqrt{2}} = \\dfrac{3\\sqrt{2}}{2} \\approx 2.12 > R = 2\\) → không cắt.",review:"Ôn mục V"},
+    {q:"The circle passing through \\(A(1; 0)\\), \\(B(0; 1)\\), \\(O(0; 0)\\) has equation:",opts:["\\(x^2 + y^2 - x - y = 0\\)","\\(x^2 + y^2 + x + y = 0\\)","\\(x^2 + y^2 - 2x - 2y = 0\\)","\\(x^2 + y^2 = 1\\)"],ans:0,exp:"Tâm \\((1/2; 1/2)\\), \\(R = \\sqrt{2}/2\\). Khai triển: \\(x^2 + y^2 - x - y = 0\\).",review:"Ôn mục II"},
+    {q:"The distance between \\(3x - 4y + 2 = 0\\) and \\(3x - 4y - 3 = 0\\) is:",opts:["1","2","3","5"],ans:0,exp:"\\(d = \\dfrac{|2 - (-3)|}{5} = \\dfrac{5}{5} = 1\\).",review:"Ôn mục IV"},
+    {q:"The angle between \\(2x - y + 3 = 0\\) and \\(x + 2y - 5 = 0\\) is:",opts:["\\(30^\\circ\\)","\\(45^\\circ\\)","\\(60^\\circ\\)","\\(90^\\circ\\)"],ans:3,exp:"\\(\\vec{n_1} \\cdot \\vec{n_2} = 2 \\cdot 1 + (-1) \\cdot 2 = 0\\) → vuông góc, góc \\(= 90^\\circ\\).",review:"Ôn mục III"},
+    {q:"Point \\(M\\) on the line \\(x + y = 0\\) with distance \\(\\sqrt{10}\\) from \\(A(1; 1)\\) could be:",opts:["\\((2; -2)\\)","\\((2; 2)\\)","\\((-2; -2)\\)","\\((1; -1)\\)"],ans:0,exp:"\\(M(t; -t)\\). \\(\\sqrt{(t-1)^2 + (-t-1)^2} = \\sqrt{2t^2 + 2} = \\sqrt{10} \\Rightarrow t^2 = 4 \\Rightarrow t = \\pm 2\\). Vậy \\(M(2; -2)\\) hoặc \\(M(-2; 2)\\).",review:"Ôn mục IV"},
+    {q:"The line through \\(A(2; 3)\\) making a \\(60^\\circ\\) angle with positive x-axis is:",opts:["\\(y - 3 = \\sqrt{3}(x - 2)\\)","\\(y - 3 = -\\sqrt{3}(x - 2)\\)","\\(y - 3 = \\dfrac{1}{\\sqrt{3}}(x - 2)\\)","\\(y = \\sqrt{3}x\\)"],ans:0,exp:"\\(k = \\tan 60^\\circ = \\sqrt{3}\\). Phương trình: \\(y - 3 = \\sqrt{3}(x - 2)\\).",review:"Ôn mục I & III"}
+  ]
+};
+
+const letterMap=['A','B','C','D'];
+
+function renderPractice(group){
+  const container=document.getElementById('panel-'+group);
+  container.innerHTML='';
+  practiceData[group].forEach(function(item,idx){
+    const card=document.createElement('div');
+    card.className='q-card';card.id='g'+group+'q'+idx;
+    let optsHtml='';
+    item.opts.forEach(function(o,i){
+      optsHtml+='<button class="option" data-group="'+group+'" data-q="'+idx+'" data-opt="'+i+'"><span class="letter">'+letterMap[i]+'</span><span class="opt-text">'+o+'</span></button>';
+    });
+    card.innerHTML='<div class="q-head"><div class="q-num">'+(idx+1)+'</div><div class="q-text">'+item.q+'</div></div><div class="options">'+optsHtml+'</div><div class="feedback" id="fb-'+group+'-'+idx+'"></div>';
+    container.appendChild(card);
+  });
+  if(window.renderMathInElement){renderMathInElement(container,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+}
+document.querySelectorAll('.group-tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.group-tab').forEach(function(t){t.classList.remove('active');});
+    document.querySelectorAll('.group-panel').forEach(function(p){p.classList.remove('active');});
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.group).classList.add('active');
+  });
+});
+[1,2,3].forEach(renderPractice);
+
+document.addEventListener('click',function(e){
+  const btn=e.target.closest('.option');
+  if(!btn||btn.classList.contains('disabled')) return;
+  const group=btn.dataset.group;if(!group) return;
+  const qIdx=+btn.dataset.q, optIdx=+btn.dataset.opt;
+  const card=document.getElementById('g'+group+'q'+qIdx);
+  const item=practiceData[group][qIdx];
+  const fb=document.getElementById('fb-'+group+'-'+qIdx);
+  const allOpts=card.querySelectorAll('.option');
+  allOpts.forEach(function(o){o.classList.add('disabled');});
+  allOpts[item.ans].classList.add('correct');
+  const isCorrect=optIdx===item.ans;
+  if(!isCorrect){btn.classList.add('wrong');}
+  card.classList.add(isCorrect?'correct':'wrong');
+  fb.className='feedback show '+(isCorrect?'ok':'no');
+  if(isCorrect){
+    fb.innerHTML='<strong>✅ Correct!</strong>'+item.exp+'<div class="review">💡 '+item.review+'</div>';
+    playDing();
+  } else {
+    fb.innerHTML='<strong>❌ Incorrect. Correct answer: '+letterMap[item.ans]+'</strong>'+item.exp+'<div class="review">📖 Ôn tập lại: '+item.review+'</div>';
+    playBuzz();
+  }
+  if(window.renderMathInElement){renderMathInElement(fb,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+});
+
+/* ============ SAT TOPICS & RECOMMENDATIONS ============ */
+const TOPICS = {
+  LINE_EQ:"Phương trình đường thẳng",
+  CIRCLE_EQ:"Phương trình đường tròn",
+  ANGLE:"Góc giữa hai đường thẳng",
+  DISTANCE:"Khoảng cách",
+  POSITION:"Vị trí tương đối",
+  APPLICATION:"Ứng dụng thực tế",
+  COMBINED:"Tổng hợp nâng cao"
+};
+const TOPIC_RECOMMENDATIONS = {
+  LINE_EQ:"Ôn mục I: dạng tổng quát \\(ax+by+c=0\\), hệ số góc \\(k=-a/b\\), vector pháp tuyến \\((a;b)\\).",
+  CIRCLE_EQ:"Ôn mục II: \\((x-a)^2+(y-b)^2=R^2\\); hoàn thành bình phương khi ở dạng khai triển.",
+  ANGLE:"Ôn mục III: \\(\\cos\\varphi = \\dfrac{|a_1a_2+b_1b_2|}{\\sqrt{a_1^2+b_1^2}\\sqrt{a_2^2+b_2^2}}\\); vuông góc khi \\(a_1a_2+b_1b_2=0\\).",
+  DISTANCE:"Ôn mục IV: \\(d = \\dfrac{|ax_0+by_0+c|}{\\sqrt{a^2+b^2}}\\); khoảng cách 2 đường song song \\(\\dfrac{|c_1-c_2|}{\\sqrt{a^2+b^2}}\\).",
+  POSITION:"Ôn mục V: so sánh \\(d(I,\\Delta)\\) với \\(R\\); điều kiện tiếp xúc \\(d=R\\).",
+  APPLICATION:"Ôn mục VI: quy trình 5 bước giải bài toán thực tế; chọn hệ trục tọa độ phù hợp.",
+  COMBINED:"Ôn mục VII: tổng hợp công thức vàng và mẹo làm bài nhanh."
+};
+
+/* ============ SAT SETS — 3 × 30 = 90 câu ============ */
+const SAT_SETS = {
+  1:{name:"Set 1 — Foundations",desc:"Phương trình đường thẳng cơ bản, đường tròn, khoảng cách, góc đơn giản.",questions:[
+    {q:"The slope of the line through \\((2; 3)\\) and \\((5; 9)\\) is:",opts:["1","2","3","\\(1/2\\)"],ans:1,topic:"LINE_EQ",exp:"\\(m = \\dfrac{9 - 3}{5 - 2} = 2\\).",review:"Ôn mục I"},
+    {q:"The line \\(4x - 3y + 12 = 0\\) has normal vector:",opts:["\\((4; -3)\\)","\\((4; 3)\\)","\\((-4; 3)\\)","\\((3; 4)\\)"],ans:0,topic:"LINE_EQ",exp:"\\(\\vec{n} = (a; b) = (4; -3)\\).",review:"Ôn mục I"},
+    {q:"The slope of \\(5x + 2y - 10 = 0\\) is:",opts:["\\(\\dfrac{5}{2}\\)","\\(-\\dfrac{5}{2}\\)","\\(\\dfrac{2}{5}\\)","\\(-\\dfrac{2}{5}\\)"],ans:1,topic:"LINE_EQ",exp:"\\(k = -\\dfrac{5}{2}\\).",review:"Ôn mục I"},
+    {q:"The circle \\((x - 3)^2 + (y + 1)^2 = 25\\) has center:",opts:["\\((3; -1)\\)","\\((-3; 1)\\)","\\((3; 1)\\)","\\((-3; -1)\\)"],ans:0,topic:"CIRCLE_EQ",exp:"Tâm \\((3; -1)\\), \\(R = 5\\).",review:"Ôn mục II"},
+    {q:"The circle \\(x^2 + y^2 - 8x + 2y - 8 = 0\\) has radius:",opts:["3","4","5","6"],ans:2,topic:"CIRCLE_EQ",exp:"\\((x - 4)^2 + (y + 1)^2 = 25 \\Rightarrow R = 5\\).",review:"Ôn mục II"},
+    {q:"The distance from \\((2; 3)\\) to \\(3x + 4y - 5 = 0\\) is:",opts:["1","\\(\\dfrac{13}{5}\\)","2","3"],ans:1,topic:"DISTANCE",exp:"\\(d = \\dfrac{|6 + 12 - 5|}{5} = \\dfrac{13}{5}\\).",review:"Ôn mục IV"},
+    {q:"The line \\(y = 4x + 7\\) has slope:",opts:["4","7","\\(1/4\\)","\\(-4\\)"],ans:0,topic:"LINE_EQ",exp:"Hệ số góc \\(k = 4\\).",review:"Ôn mục I"},
+    {q:"The line through \\((1; 1)\\) with slope \\(-2\\) is:",opts:["\\(y = -2x + 3\\)","\\(y = 2x - 1\\)","\\(y = -2x - 1\\)","\\(y = 2x + 1\\)"],ans:0,topic:"LINE_EQ",exp:"\\(y - 1 = -2(x - 1) \\Rightarrow y = -2x + 3\\).",review:"Ôn mục I"},
+    {q:"The lines \\(y = 3x + 2\\) and \\(y = 3x - 5\\) are:",opts:["Perpendicular","Parallel","Coincident","Intersecting"],ans:1,topic:"ANGLE",exp:"Cùng hệ số góc 3, khác tung độ gốc → song song.",review:"Ôn mục III"},
+    {q:"The angle between \\(y = x\\) and \\(y = \\sqrt{3}x\\) is:",opts:["\\(15^\\circ\\)","\\(30^\\circ\\)","\\(45^\\circ\\)","\\(60^\\circ\\)"],ans:0,topic:"ANGLE",exp:"\\(\\tan\\varphi = \\dfrac{|\\sqrt{3} - 1|}{|1 + \\sqrt{3}|} = 2 - \\sqrt{3} \\Rightarrow \\varphi = 15^\\circ\\).",review:"Ôn mục III"},
+    {q:"The distance from the origin to \\(x + y - 6 = 0\\) is:",opts:["\\(3\\)","\\(3\\sqrt{2}\\)","\\(6\\sqrt{2}\\)","\\(2\\)"],ans:1,topic:"DISTANCE",exp:"\\(d = \\dfrac{|{-6}|}{\\sqrt{2}} = 3\\sqrt{2}\\).",review:"Ôn mục IV"},
+    {q:"The x-axis has equation:",opts:["\\(x = 0\\)","\\(y = 0\\)","\\(x = y\\)","\\(x + y = 0\\)"],ans:1,topic:"LINE_EQ",exp:"Trục \\(Ox\\) có phương trình \\(y = 0\\).",review:"Ôn mục I"},
+    {q:"The distance from \\((1; 1)\\) to the line \\(y = 2\\) (i.e. \\(y - 2 = 0\\)) is:",opts:["1","2","3","0"],ans:0,topic:"DISTANCE",exp:"\\(d = |1 - 2| = 1\\).",review:"Ôn mục IV"},
+    {q:"The circle \\(x^2 + y^2 = 16\\) has radius:",opts:["2","4","8","16"],ans:1,topic:"CIRCLE_EQ",exp:"\\(R^2 = 16 \\Rightarrow R = 4\\).",review:"Ôn mục II"},
+    {q:"The lines \\(x + 2y = 0\\) and \\(2x + 4y - 3 = 0\\) are:",opts:["Perpendicular","Parallel","Coincident","Intersecting"],ans:1,topic:"ANGLE",exp:"\\(\\dfrac{1}{2} = \\dfrac{2}{4} \\ne \\dfrac{0}{-3}\\) → song song.",review:"Ôn mục III"},
+    {q:"The line through \\((3; 4)\\) perpendicular to \\(y = x\\) is:",opts:["\\(y = -x + 7\\)","\\(y = x + 1\\)","\\(y = 2x - 2\\)","\\(y = -2x + 10\\)"],ans:0,topic:"LINE_EQ",exp:"Hệ số góc vuông góc \\(k = -1\\). \\(y - 4 = -(x - 3) \\Rightarrow y = -x + 7\\).",review:"Ôn mục I & III"},
+    {q:"The distance between \\(y = 2x + 1\\) and \\(y = 2x + 4\\) is:",opts:["\\(\\dfrac{1}{\\sqrt{5}}\\)","\\(\\dfrac{3}{\\sqrt{5}}\\)","\\(\\dfrac{5}{\\sqrt{5}}\\)","\\(\\sqrt{5}\\)"],ans:1,topic:"DISTANCE",exp:"Đưa về \\(2x - y + 1 = 0\\) và \\(2x - y + 4 = 0\\): \\(d = \\dfrac{|1 - 4|}{\\sqrt{5}} = \\dfrac{3}{\\sqrt{5}}\\).",review:"Ôn mục IV"},
+    {q:"Two perpendicular lines have angle:",opts:["\\(0^\\circ\\)","\\(45^\\circ\\)","\\(90^\\circ\\)","\\(180^\\circ\\)"],ans:2,topic:"ANGLE",exp:"Góc giữa hai đường vuông góc là \\(90^\\circ\\).",review:"Ôn mục III"},
+    {q:"The length of the tangent from \\(A(5; 0)\\) to the circle \\(x^2 + y^2 = 9\\) is:",opts:["2","4","\\(2\\sqrt{2}\\)","3"],ans:1,topic:"POSITION",exp:"\\(\\sqrt{5^2 - 3^2} = \\sqrt{25 - 9} = 4\\).",review:"Ôn mục V"},
+    {q:"The intersection of \\(y = 2x + 1\\) and \\(y = -x + 4\\) is:",opts:["\\((1; 3)\\)","\\((3; 1)\\)","\\((2; 2)\\)","\\((1; 1)\\)"],ans:0,topic:"LINE_EQ",exp:"\\(2x + 1 = -x + 4 \\Rightarrow x = 1, y = 3\\).",review:"Ôn mục I"},
+    {q:"The circle tangent to the x-axis at the origin with \\(R = 3\\) has equation:",opts:["\\(x^2 + (y - 3)^2 = 9\\)","\\(x^2 + (y + 3)^2 = 9\\)","\\((x - 3)^2 + y^2 = 9\\)","\\(x^2 + y^2 = 9\\)"],ans:0,topic:"CIRCLE_EQ",exp:"Tâm \\((0; 3)\\), \\(R = 3\\). Phương trình: \\(x^2 + (y - 3)^2 = 9\\).",review:"Ôn mục II"},
+    {q:"The circle with center \\((2; 3)\\) passing through \\((5; 7)\\) has radius:",opts:["3","4","5","6"],ans:2,topic:"CIRCLE_EQ",exp:"\\(R = \\sqrt{(5-2)^2 + (7-3)^2} = \\sqrt{9 + 16} = 5\\).",review:"Ôn mục II"},
+    {q:"The distance from \\((1; 2)\\) to the vertical line \\(x = 3\\) is:",opts:["1","2","3","4"],ans:1,topic:"DISTANCE",exp:"\\(d = |1 - 3| = 2\\).",review:"Ôn mục IV"},
+    {q:"A line perpendicular to \\(x = 2\\) has slope:",opts:["0","1","Undefined","\\(-1\\)"],ans:0,topic:"LINE_EQ",exp:"\\(x = 2\\) thẳng đứng → đường vuông góc là ngang, hệ số góc 0.",review:"Ôn mục I & III"},
+    {q:"The line through \\(A(1; 2)\\) and \\(B(3; 4)\\) is:",opts:["\\(y = x + 1\\)","\\(y = x - 1\\)","\\(y = 2x\\)","\\(y = 2x - 1\\)"],ans:0,topic:"LINE_EQ",exp:"Hệ số góc 1. \\(y - 2 = x - 1 \\Rightarrow y = x + 1\\).",review:"Ôn mục I"},
+    {q:"The point \\((2; 2)\\) lies on the line \\(x + y = 4\\). Its distance to this line is:",opts:["0","1","2","4"],ans:0,topic:"DISTANCE",exp:"Điểm nằm trên đường thẳng nên khoảng cách \\(= 0\\).",review:"Ôn mục IV"},
+    {q:"The line \\(y = -x + 5\\) has normal vector:",opts:["\\((1; -1)\\)","\\((1; 1)\\)","\\((-1; 1)\\)","\\((1; -5)\\)"],ans:1,topic:"LINE_EQ",exp:"\\(x + y - 5 = 0 \\Rightarrow \\vec{n} = (1; 1)\\).",review:"Ôn mục I"},
+    {q:"The circle with center at origin, passing through \\((3; 4)\\), has equation:",opts:["\\(x^2 + y^2 = 5\\)","\\(x^2 + y^2 = 25\\)","\\((x - 3)^2 + (y - 4)^2 = 25\\)","\\(x^2 + y^2 = 7\\)"],ans:1,topic:"CIRCLE_EQ",exp:"\\(R = \\sqrt{9 + 16} = 5\\). Phương trình: \\(x^2 + y^2 = 25\\).",review:"Ôn mục II"},
+    {q:"The intersection of \\(x = 1\\) and \\(y = 2\\) is:",opts:["\\((1; 2)\\)","\\((2; 1)\\)","\\((1; 1)\\)","\\((2; 2)\\)"],ans:0,topic:"LINE_EQ",exp:"Giao điểm \\((1; 2)\\).",review:"Ôn mục I"},
+    {q:"The distance between the parallel lines \\(x - y + 2 = 0\\) and \\(x - y - 4 = 0\\) is:",opts:["\\(\\sqrt{2}\\)","\\(2\\sqrt{2}\\)","\\(3\\sqrt{2}\\)","\\(4\\sqrt{2}\\)"],ans:2,topic:"DISTANCE",exp:"\\(d = \\dfrac{|2 - (-4)|}{\\sqrt{2}} = \\dfrac{6}{\\sqrt{2}} = 3\\sqrt{2}\\).",review:"Ôn mục IV"}
+  ]},
+  2:{name:"Set 2 — Intermediate",desc:"Tiếp tuyến đường tròn, khoảng cách nâng cao, góc giữa hai đường, vị trí tương đối.",questions:[
+    {q:"The perpendicular bisector of \\(AB\\), \\(A(1; 1)\\), \\(B(5; 3)\\), is:",opts:["\\(2x + y - 8 = 0\\)","\\(2x - y - 8 = 0\\)","\\(x + 2y - 8 = 0\\)","\\(x - 2y - 8 = 0\\)"],ans:0,topic:"LINE_EQ",exp:"Trung điểm \\((3; 2)\\), hệ số góc AB \\(= 1/2\\), vuông góc \\(-2\\). \\(y - 2 = -2(x - 3) \\Rightarrow 2x + y - 8 = 0\\).",review:"Ôn mục I & III"},
+    {q:"The tangent to the circle \\(x^2 + y^2 = 25\\) at \\((4; 3)\\) is:",opts:["\\(4x + 3y = 25\\)","\\(3x + 4y = 25\\)","\\(4x - 3y = 25\\)","\\(3x - 4y = 25\\)"],ans:0,topic:"POSITION",exp:"Tiếp tuyến: \\(x_0 x + y_0 y = R^2 \\Rightarrow 4x + 3y = 25\\).",review:"Ôn mục V"},
+    {q:"The distance between \\(3x - 4y + 2 = 0\\) and \\(3x - 4y - 8 = 0\\) is:",opts:["1","2","3","4"],ans:1,topic:"DISTANCE",exp:"\\(d = \\dfrac{|2 - (-8)|}{5} = 2\\).",review:"Ôn mục IV"},
+    {q:"The angle between \\(2x - y + 1 = 0\\) and \\(x + 2y - 3 = 0\\) is:",opts:["\\(30^\\circ\\)","\\(45^\\circ\\)","\\(60^\\circ\\)","\\(90^\\circ\\)"],ans:3,topic:"ANGLE",exp:"\\(2 \\cdot 1 + (-1) \\cdot 2 = 0\\) → vuông góc.",review:"Ôn mục III"},
+    {q:"The circle through \\(A(2; 0)\\), \\(B(0; 2)\\), \\(O(0; 0)\\) has equation:",opts:["\\(x^2 + y^2 - 2x - 2y = 0\\)","\\(x^2 + y^2 + 2x + 2y = 0\\)","\\(x^2 + y^2 - 4x - 4y = 0\\)","\\(x^2 + y^2 = 4\\)"],ans:0,topic:"CIRCLE_EQ",exp:"Tâm \\((1; 1)\\), \\(R = \\sqrt{2}\\). \\((x - 1)^2 + (y - 1)^2 = 2 \\Rightarrow x^2 + y^2 - 2x - 2y = 0\\).",review:"Ôn mục II"},
+    {q:"The line through \\(A(1; 2)\\) parallel to \\(3x + 4y - 5 = 0\\) is:",opts:["\\(3x + 4y - 11 = 0\\)","\\(3x + 4y + 11 = 0\\)","\\(3x - 4y + 11 = 0\\)","\\(4x + 3y - 10 = 0\\)"],ans:0,topic:"LINE_EQ",exp:"\\(3(x - 1) + 4(y - 2) = 0 \\Rightarrow 3x + 4y - 11 = 0\\).",review:"Ôn mục I"},
+    {q:"The circle with center \\((1; -2)\\) tangent to \\(x + y - 1 = 0\\) has radius:",opts:["\\(\\sqrt{2}\\)","\\(2\\sqrt{2}\\)","2","\\(\\sqrt{3}\\)"],ans:0,topic:"POSITION",exp:"\\(R = d = \\dfrac{|1 - 2 - 1|}{\\sqrt{2}} = \\dfrac{2}{\\sqrt{2}} = \\sqrt{2}\\).",review:"Ôn mục V"},
+    {q:"The length of the tangent from \\((0; 0)\\) to \\((x - 6)^2 + (y - 8)^2 = 25\\) is:",opts:["\\(5\\sqrt{3}\\)","\\(5\\)","\\(10\\)","\\(\\sqrt{3}\\)"],ans:0,topic:"POSITION",exp:"\\(d = \\sqrt{36 + 64} = 10\\). Tangent length \\(= \\sqrt{100 - 25} = \\sqrt{75} = 5\\sqrt{3}\\).",review:"Ôn mục V"},
+    {q:"The circle passing through \\((1; 0)\\), \\((-1; 0)\\), \\((0; 1)\\) is:",opts:["\\(x^2 + y^2 = 1\\)","\\(x^2 + y^2 = 2\\)","\\(x^2 + y^2 - 1 = 0\\)","\\((x - 1)^2 + (y - 1)^2 = 1\\)"],ans:0,topic:"CIRCLE_EQ",exp:"Tâm \\((0; 0)\\), \\(R = 1\\). Phương trình: \\(x^2 + y^2 = 1\\).",review:"Ôn mục II"},
+    {q:"The distance from \\(M(2; 3)\\) to the line through \\(A(1; 1)\\) and \\(B(4; 5)\\) is:",opts:["\\(\\dfrac{2}{5}\\)","\\(\\dfrac{3}{5}\\)","\\(\\dfrac{4}{5}\\)","1"],ans:0,topic:"DISTANCE",exp:"Line \\(AB\\): \\(4x - 3y - 1 = 0\\). \\(d = \\dfrac{|8 - 9 - 1|}{5} = \\dfrac{2}{5}\\).",review:"Ôn mục IV"},
+    {q:"Two circles: \\(x^2 + y^2 = 4\\) and \\((x - 2)^2 + (y - 2)^2 = 4\\). Relative position?",opts:["0 points","1 point","2 points","Infinitely many"],ans:2,topic:"POSITION",exp:"\\(d = \\sqrt{8} \\approx 2.83\\). \\(|R_1 - R_2| = 0 < d < R_1 + R_2 = 4\\) → cắt tại 2 điểm.",review:"Ôn mục V"},
+    {q:"The line through \\(M(-1; 2)\\) perpendicular to the line \\(y = 3\\) is:",opts:["\\(x = -1\\)","\\(x = 2\\)","\\(y = 2\\)","\\(y = -1\\)"],ans:0,topic:"LINE_EQ",exp:"\\(y = 3\\) là đường ngang → đường vuông góc là thẳng đứng \\(x = -1\\).",review:"Ôn mục I & III"},
+    {q:"Point \\(M\\) on \\(y = 2x\\) with distance \\(\\sqrt{5}\\) from \\(A(0; 0)\\) could be:",opts:["\\((1; 2)\\)","\\((2; 1)\\)","\\((2; 4)\\)","\\((0; 0)\\)"],ans:0,topic:"DISTANCE",exp:"\\(M(t; 2t)\\). \\(\\sqrt{t^2 + 4t^2} = \\sqrt{5t^2} = \\sqrt{5} \\Rightarrow t = \\pm 1\\). \\(M(1; 2)\\).",review:"Ôn mục IV"},
+    {q:"The distance from \\(A(1; 2)\\) to \\(3x - 4y - 5 = 0\\) is:",opts:["1","2","3","4"],ans:1,topic:"DISTANCE",exp:"\\(d = \\dfrac{|3 - 8 - 5|}{5} = \\dfrac{10}{5} = 2\\).",review:"Ôn mục IV"},
+    {q:"The line through \\(M(1; 2)\\) perpendicular to the line through \\(A(0; 0)\\), \\(B(2; 1)\\) is:",opts:["\\(2x + y - 4 = 0\\)","\\(2x - y = 0\\)","\\(x + 2y - 5 = 0\\)","\\(x - 2y + 3 = 0\\)"],ans:0,topic:"LINE_EQ",exp:"Hệ số góc AB \\(= 1/2\\), vuông góc \\(-2\\). \\(y - 2 = -2(x - 1) \\Rightarrow 2x + y - 4 = 0\\).",review:"Ôn mục I & III"},
+    {q:"The line \\(3x - 4y + 12 = 0\\) intersects the axes at:",opts:["\\((0; 3)\\) and \\((-4; 0)\\)","\\((0; 3)\\) and \\((4; 0)\\)","\\((0; -3)\\) and \\((-4; 0)\\)","\\((3; 0)\\) and \\((0; 4)\\)"],ans:0,topic:"LINE_EQ",exp:"\\(x = 0 \\Rightarrow y = 3\\); \\(y = 0 \\Rightarrow x = -4\\).",review:"Ôn mục I"},
+    {q:"The circle \\(x^2 + y^2 - 6x + 4y - 3 = 0\\) has center:",opts:["\\((3; -2)\\)","\\((-3; 2)\\)","\\((3; 2)\\)","\\((-3; -2)\\)"],ans:0,topic:"CIRCLE_EQ",exp:"\\((x - 3)^2 + (y + 2)^2 = 16\\). Tâm \\((3; -2)\\), \\(R = 4\\).",review:"Ôn mục II"},
+    {q:"The distance from \\(M(1; 2)\\) to \\(4x + 3y = 0\\) is:",opts:["1","2","3","4"],ans:1,topic:"DISTANCE",exp:"\\(d = \\dfrac{|4 + 6|}{5} = 2\\).",review:"Ôn mục IV"},
+    {q:"The line through \\(A(2; 1)\\) with slope \\(1\\) is:",opts:["\\(y = x - 1\\)","\\(y = x + 1\\)","\\(y = -x + 3\\)","\\(y = 2x - 3\\)"],ans:0,topic:"LINE_EQ",exp:"\\(y - 1 = 1(x - 2) \\Rightarrow y = x - 1\\).",review:"Ôn mục I"},
+    {q:"The distance from the origin to \\(3x + 4y - 10 = 0\\) is:",opts:["1","2","3","4"],ans:1,topic:"DISTANCE",exp:"\\(d = \\dfrac{|{-10}|}{5} = 2\\).",review:"Ôn mục IV"},
+    {q:"The lines \\(2x + 3y - 1 = 0\\) and \\(4x + 6y + 5 = 0\\) are:",opts:["Perpendicular","Parallel","Coincident","Intersecting"],ans:1,topic:"ANGLE",exp:"\\(\\dfrac{2}{4} = \\dfrac{3}{6} \\ne \\dfrac{-1}{5}\\) → song song.",review:"Ôn mục III"},
+    {q:"The lines \\(y = 2x - 1\\) and \\(y = -\\dfrac{1}{2}x + 3\\) are:",opts:["Perpendicular","Parallel","Coincident","Intersecting"],ans:0,topic:"ANGLE",exp:"\\(k_1 k_2 = 2 \\cdot (-1/2) = -1\\) → vuông góc.",review:"Ôn mục III"},
+    {q:"The circle center \\((0; 0)\\) through \\((3; -4)\\) has radius:",opts:["3","4","5","7"],ans:2,topic:"CIRCLE_EQ",exp:"\\(R = \\sqrt{9 + 16} = 5\\).",review:"Ôn mục II"},
+    {q:"The intersection of \\(x + y = 1\\) and \\(x - y = 3\\) is:",opts:["\\((2; -1)\\)","\\((-2; 1)\\)","\\((1; 0)\\)","\\((0; 1)\\)"],ans:0,topic:"LINE_EQ",exp:"Cộng: \\(2x = 4 \\Rightarrow x = 2, y = -1\\).",review:"Ôn mục I"},
+    {q:"The distance from \\(A(2; 1)\\) to the line \\(y = 0\\) is:",opts:["0","1","2","3"],ans:1,topic:"DISTANCE",exp:"\\(d = |1 - 0| = 1\\).",review:"Ôn mục IV"},
+    {q:"The midpoint of \\(A(1; 3)\\) and \\(B(5; 7)\\) is:",opts:["\\((3; 5)\\)","\\((2; 4)\\)","\\((4; 6)\\)","\\((3; 4)\\)"],ans:0,topic:"LINE_EQ",exp:"\\(\\left(\\dfrac{1+5}{2}; \\dfrac{3+7}{2}\\right) = (3; 5)\\).",review:"Ôn mục I"},
+    {q:"The line with normal vector \\((1; -2)\\) through the origin is:",opts:["\\(x - 2y = 0\\)","\\(2x - y = 0\\)","\\(x + 2y = 0\\)","\\(2x + y = 0\\)"],ans:0,topic:"LINE_EQ",exp:"\\(1 \\cdot (x - 0) - 2 \\cdot (y - 0) = 0 \\Rightarrow x - 2y = 0\\).",review:"Ôn mục I"},
+    {q:"The circle with diameter endpoints \\((0; 0)\\) and \\((4; 6)\\) has center:",opts:["\\((2; 3)\\)","\\((4; 6)\\)","\\((0; 3)\\)","\\((2; 0)\\)"],ans:0,topic:"CIRCLE_EQ",exp:"Tâm là trung điểm: \\((2; 3)\\).",review:"Ôn mục II"},
+    {q:"The tangent to \\((x - 1)^2 + (y - 2)^2 = 9\\) at \\((1; 5)\\) is:",opts:["\\(y = 5\\)","\\(y = 2\\)","\\(x = 1\\)","\\(x = 5\\)"],ans:0,topic:"POSITION",exp:"Tâm \\((1; 2)\\), tiếp điểm \\((1; 5)\\). Bán kính thẳng đứng → tiếp tuyến nằm ngang \\(y = 5\\).",review:"Ôn mục V"},
+    {q:"The distance between the circles \\(x^2 + y^2 = 9\\) and \\(x^2 + y^2 - 8x - 6y + 21 = 0\\):",opts:["0","1","2","5"],ans:1,topic:"POSITION",exp:"\\((C_2)\\): \\((x - 4)^2 + (y - 3)^2 = 4\\), tâm \\((4; 3)\\), \\(R_2 = 2\\). \\(d = 5 = R_1 + R_2 = 3 + 2\\) → tiếp xúc ngoài, khoảng cách \\(= 0\\). Đáp án: tiếp xúc (khoảng cách \\(= 0\\)).",review:"Ôn mục V"}
+  ]},
+  3:{name:"Set 3 — Advanced",desc:"Bài toán SAT-style phức tạp: tiếp tuyến, đường tròn ngoại tiếp, ứng dụng thực tế, tối ưu.",questions:[
+    {q:"The shortest distance from \\(A(1; 1)\\) to the line \\(3x + 4y - 12 = 0\\) is:",opts:["1","2","3","4"],ans:0,topic:"DISTANCE",exp:"\\(d = \\dfrac{|3 + 4 - 12|}{5} = \\dfrac{5}{5} = 1\\).",review:"Ôn mục IV"},
+    {q:"The length of the tangent from \\(M(4; 3)\\) to \\(x^2 + y^2 = 9\\) is:",opts:["1","2","3","4"],ans:3,topic:"POSITION",exp:"\\(d = 5\\), tangent \\(= \\sqrt{25 - 9} = 4\\).",review:"Ôn mục V"},
+    {q:"The circle through \\(A(1; 0)\\), \\(B(0; 1)\\), \\(O(0; 0)\\) has equation:",opts:["\\(x^2 + y^2 - x - y = 0\\)","\\(x^2 + y^2 + x + y = 0\\)","\\(x^2 + y^2 - 2x - 2y = 0\\)","\\(x^2 + y^2 = 1\\)"],ans:0,topic:"CIRCLE_EQ",exp:"Tâm \\((1/2; 1/2)\\), \\(R = \\sqrt{2}/2\\). \\((x - 1/2)^2 + (y - 1/2)^2 = 1/2 \\Rightarrow x^2 + y^2 - x - y = 0\\).",review:"Ôn mục II"},
+    {q:"The area of the triangle formed by \\(3x + 4y = 12\\) with the axes is:",opts:["3","6","9","12"],ans:1,topic:"APPLICATION",exp:"Cắt \\(Ox\\) tại \\((4; 0)\\), \\(Oy\\) tại \\((0; 3)\\). Diện tích \\(= \\dfrac{1}{2} \\cdot 4 \\cdot 3 = 6\\).",review:"Ôn mục VI"},
+    {q:"The distance from \\(M(1; 2)\\) to the line through \\(A(0; 0)\\), \\(B(3; 4)\\) is:",opts:["\\(\\dfrac{1}{5}\\)","\\(\\dfrac{2}{5}\\)","\\(\\dfrac{3}{5}\\)","\\(\\dfrac{4}{5}\\)"],ans:1,topic:"DISTANCE",exp:"Line AB: \\(4x - 3y = 0\\). \\(d = \\dfrac{|4 - 6|}{5} = \\dfrac{2}{5}\\).",review:"Ôn mục IV"},
+    {q:"The tangent to \\(x^2 + y^2 = 1\\) at point with \\(x = 1/2\\) (above x-axis) is:",opts:["\\(x + \\sqrt{3}y = 2\\)","\\(x - \\sqrt{3}y = 2\\)","\\(\\sqrt{3}x + y = 2\\)","\\(2x + \\sqrt{3}y = 2\\)"],ans:0,topic:"POSITION",exp:"\\(y = \\sqrt{1 - 1/4} = \\sqrt{3}/2\\). Tiếp tuyến: \\((1/2)x + (\\sqrt{3}/2)y = 1 \\Rightarrow x + \\sqrt{3}y = 2\\).",review:"Ôn mục V"},
+    {q:"Two circles \\(x^2 + y^2 = 9\\) and \\((x - 4)^2 + (y - 3)^2 = 16\\). Relative position?",opts:["0 points","1 point","2 points","Infinitely many"],ans:2,topic:"POSITION",exp:"\\(d = 5\\), \\(R_1 = 3\\), \\(R_2 = 4\\), \\(R_1 + R_2 = 7 > 5\\), \\(|R_1 - R_2| = 1 < 5\\) → cắt tại 2 điểm.",review:"Ôn mục V"},
+    {q:"The line through \\(A(1; 1)\\), \\(B(2; -1)\\) is:",opts:["\\(2x + y - 3 = 0\\)","\\(2x - y + 1 = 0\\)","\\(x + 2y - 3 = 0\\)","\\(x - 2y + 1 = 0\\)"],ans:0,topic:"LINE_EQ",exp:"\\(k = -2\\). \\(y - 1 = -2(x - 1) \\Rightarrow 2x + y - 3 = 0\\).",review:"Ôn mục I"},
+    {q:"The foot of the perpendicular from \\(M(2; 1)\\) to \\(x - y + 1 = 0\\) is:",opts:["\\((1; 2)\\)","\\((2; 1)\\)","\\((1; 0)\\)","\\((2; 3)\\)"],ans:0,topic:"APPLICATION",exp:"Đường vuông góc qua M: \\(x + y - 3 = 0\\). Giao với \\(x - y + 1 = 0\\): \\(2x - 2 = 0 \\Rightarrow x = 1, y = 2\\).",review:"Ôn mục IV & VI"},
+    {q:"The line making equal intercepts and passing through \\((3; 4)\\) is:",opts:["\\(x + y = 7\\)","\\(x - y = -1\\)","\\(2x + y = 10\\)","\\(x + 2y = 11\\)"],ans:0,topic:"LINE_EQ",exp:"\\(\\dfrac{x}{a} + \\dfrac{y}{a} = 1 \\Rightarrow \\dfrac{3 + 4}{a} = 1 \\Rightarrow a = 7\\). \\(x + y = 7\\).",review:"Ôn mục I"},
+    {q:"The minimum distance from a point on the circle \\((x - 2)^2 + (y - 3)^2 = 4\\) to the origin is:",opts:["\\(\\sqrt{13} - 2\\)","\\(\\sqrt{13} + 2\\)","\\(\\sqrt{13}\\)","2"],ans:0,topic:"COMBINED",exp:"Tâm \\((2; 3)\\), \\(R = 2\\). \\(d(O, I) = \\sqrt{13}\\). Min \\(= \\sqrt{13} - 2\\).",review:"Ôn mục V & VI"},
+    {q:"Lines parallel to \\(y = x\\) tangent to \\(x^2 + y^2 = 4\\) are:",opts:["\\(y = x \\pm 2\\sqrt{2}\\)","\\(y = x \\pm 2\\)","\\(y = x \\pm \\sqrt{2}\\)","\\(y = x \\pm 4\\)"],ans:0,topic:"POSITION",exp:"Line \\(x - y + c = 0\\), \\(d = \\dfrac{|c|}{\\sqrt{2}} = 2 \\Rightarrow c = \\pm 2\\sqrt{2}\\).",review:"Ôn mục V"},
+    {q:"Lines through \\(M(1; 2)\\) making equal angles with the axes have slopes:",opts:["\\(\\pm 1\\)","\\(\\pm 2\\)","\\(\\pm 1/2\\)","0"],ans:0,topic:"LINE_EQ",exp:"Slope \\(\\pm 1\\) (góc \\(45^\\circ\\) hoặc \\(135^\\circ\\) với \\(Ox\\)).",review:"Ôn mục I & III"},
+    {q:"The distance from \\(A(-1; 2)\\) to \\(2x - 3y + 5 = 0\\) is:",opts:["\\(\\dfrac{3\\sqrt{13}}{13}\\)","\\(\\dfrac{4\\sqrt{13}}{13}\\)","\\(\\dfrac{5\\sqrt{13}}{13}\\)","\\(\\dfrac{2\\sqrt{13}}{13}\\)"],ans:0,topic:"DISTANCE",exp:"\\(d = \\dfrac{|-2 - 6 + 5|}{\\sqrt{13}} = \\dfrac{3}{\\sqrt{13}} = \\dfrac{3\\sqrt{13}}{13}\\).",review:"Ôn mục IV"},
+    {q:"The number of circles of radius 5 tangent to both axes is:",opts:["2","4","8","1"],ans:1,topic:"COMBINED",exp:"Tâm có thể ở 4 góc phần tư: \\((\\pm 5; \\pm 5)\\) → 4 đường tròn.",review:"Ôn mục II & V"},
+    {q:"The line \\(\\dfrac{x}{4} + \\dfrac{y}{6} = 1\\) has x-intercept:",opts:["4","6","\\(-4\\)","\\(-6\\)"],ans:0,topic:"LINE_EQ",exp:"\\(y = 0 \\Rightarrow x = 4\\).",review:"Ôn mục I"},
+    {q:"The line \\(2x + y = 4\\) intersects \\(x^2 + y^2 = 4\\) at how many points?",opts:["0","1","2","4"],ans:2,topic:"POSITION",exp:"\\(y = 4 - 2x\\). \\(x^2 + (4 - 2x)^2 = 4 \\Rightarrow 5x^2 - 16x + 12 = 0\\). \\(\\Delta = 256 - 240 = 16 > 0\\) → 2 nghiệm.",review:"Ôn mục V"},
+    {q:"A point \\(M\\) on \\(3x + 4y = 10\\) closest to the origin has coordinates:",opts:["\\((6/5; 8/5)\\)","\\((2; 1)\\)","\\((1; 2)\\)","\\((0; 5/2)\\)"],ans:0,topic:"APPLICATION",exp:"Hình chiếu của O lên đường: \\(d = 10/5 = 2\\). Điểm gần nhất cách O khoảng 2 theo phương pháp tuyến \\((3; 4)\\): \\(M = \\dfrac{10}{25}(3; 4) = (6/5; 8/5)\\).",review:"Ôn mục IV & VI"},
+    {q:"The line \\(x + y = 1\\) has normal vector:",opts:["\\((1; 1)\\)","\\((1; -1)\\)","\\((-1; 1)\\)","\\((1; 0)\\)"],ans:0,topic:"LINE_EQ",exp:"\\(x + y - 1 = 0 \\Rightarrow \\vec{n} = (1; 1)\\).",review:"Ôn mục I"},
+    {q:"The distance from \\(M(0; 5)\\) to \\(y = x\\) is:",opts:["\\(\\dfrac{5\\sqrt{2}}{2}\\)","\\(5\\sqrt{2}\\)","\\(\\dfrac{5}{2}\\)","5"],ans:0,topic:"DISTANCE",exp:"\\(x - y = 0\\). \\(d = \\dfrac{|0 - 5|}{\\sqrt{2}} = \\dfrac{5}{\\sqrt{2}} = \\dfrac{5\\sqrt{2}}{2}\\).",review:"Ôn mục IV"},
+    {q:"The circle through \\(A(3; 0)\\), \\(B(0; 3)\\) with center on \\(x + y = 4\\) has radius:",opts:["\\(\\sqrt{5}\\)","\\(\\sqrt{3}\\)","\\(2\\sqrt{2}\\)","5"],ans:0,topic:"CIRCLE_EQ",exp:"Tâm \\((a; 4-a)\\) thỏa \\((a - 3)^2 + (4 - a)^2 = a^2 + (1 - a)^2 \\Rightarrow a = 2\\). Tâm \\((2; 2)\\), \\(R^2 = 1 + 4 = 5\\), \\(R = \\sqrt{5}\\).",review:"Ôn mục II"},
+    {q:"The angle between two tangent lines from \\(M(5; 0)\\) to \\(x^2 + y^2 = 9\\) is:",opts:["\\(2\\arcsin(3/5)\\)","\\(\\arcsin(3/5)\\)","\\(2\\arccos(3/5)\\)","\\(\\arccos(4/5)\\)"],ans:0,topic:"COMBINED",exp:"\\(\\sin\\alpha = R/d = 3/5\\), góc giữa hai tiếp tuyến \\(= 2\\alpha = 2\\arcsin(3/5)\\).",review:"Ôn mục V"},
+    {q:"The line through \\(M(-1; 3)\\) parallel to \\(2x + 3y + 4 = 0\\) is:",opts:["\\(2x + 3y - 7 = 0\\)","\\(2x + 3y + 7 = 0\\)","\\(2x - 3y + 11 = 0\\)","\\(3x + 2y - 3 = 0\\)"],ans:0,topic:"LINE_EQ",exp:"\\(2(x + 1) + 3(y - 3) = 0 \\Rightarrow 2x + 3y - 7 = 0\\).",review:"Ôn mục I"},
+    {q:"The point on y-axis equidistant from \\(A(1; 1)\\) and \\(B(3; 5)\\) is:",opts:["\\((0; 4)\\)","\\((0; 3)\\)","\\((0; 2)\\)","\\((0; 5)\\)"],ans:0,topic:"DISTANCE",exp:"\\((0; y)\\). \\(1 + (y - 1)^2 = 9 + (y - 5)^2 \\Rightarrow 8y = 32 \\Rightarrow y = 4\\).",review:"Ôn mục IV"},
+    {q:"The line \\(3x + 2y = 6\\) intersects the axes at:",opts:["\\((2; 0)\\) and \\((0; 3)\\)","\\((3; 0)\\) and \\((0; 2)\\)","\\((6; 0)\\) and \\((0; 6)\\)","\\((-2; 0)\\) and \\((0; -3)\\)"],ans:0,topic:"LINE_EQ",exp:"\\(x = 0 \\Rightarrow y = 3\\); \\(y = 0 \\Rightarrow x = 2\\).",review:"Ôn mục I"},
+    {q:"A robot at \\((1; 2)\\) must move to the line \\(x + y = 6\\) along the shortest path. The distance is:",opts:["\\(\\dfrac{3\\sqrt{2}}{2}\\)","\\(\\sqrt{2}\\)","\\(2\\sqrt{2}\\)","\\(\\dfrac{5\\sqrt{2}}{2}\\)"],ans:0,topic:"APPLICATION",exp:"\\(d = \\dfrac{|1 + 2 - 6|}{\\sqrt{2}} = \\dfrac{3}{\\sqrt{2}} = \\dfrac{3\\sqrt{2}}{2}\\).",review:"Ôn mục IV & VI"},
+    {q:"A circle tangent to both \\(x = 2\\) and \\(y = 3\\) with radius 1 and center in Q1 has center:",opts:["\\((3; 4)\\)","\\((1; 2)\\)","\\((3; 2)\\)","\\((1; 4)\\)"],ans:0,topic:"CIRCLE_EQ",exp:"Tâm cách \\(x = 2\\) một khoảng 1 và \\(y = 3\\) một khoảng 1, ở góc phần tư I: \\((3; 4)\\).",review:"Ôn mục II"},
+    {q:"The equation of the perpendicular bisector of \\(AB\\) with \\(A(0; 0)\\), \\(B(6; 8)\\) is:",opts:["\\(3x + 4y - 25 = 0\\)","\\(3x - 4y + 25 = 0\\)","\\(4x + 3y - 25 = 0\\)","\\(4x - 3y + 25 = 0\\)"],ans:0,topic:"LINE_EQ",exp:"Trung điểm \\((3; 4)\\), hệ số góc AB \\(= 4/3\\), vuông góc \\(-3/4\\). \\(y - 4 = -\\dfrac{3}{4}(x - 3) \\Rightarrow 3x + 4y - 25 = 0\\).",review:"Ôn mục I & III"},
+    {q:"Two circles \\(x^2 + y^2 = 1\\) and \\((x - 3)^2 + y^2 = 4\\). Relative position?",opts:["0 points (outside)","1 point (external tangent)","2 points","1 point (internal tangent)"],ans:0,topic:"POSITION",exp:"\\(d = 3\\), \\(R_1 + R_2 = 3\\) → tiếp xúc ngoài. Wait: \\(d = 3 = R_1 + R_2 = 1 + 2 = 3\\) → tiếp xúc ngoài. Đáp án: 1 point external tangent.",review:"Ôn mục V"}
+  ]}
+};
+
+/* ============ STATE ============ */
+const TEST_DURATION = 45 * 60;
+let testState = null;
+let testTimerInterval = null;
+let currentScoreId = null;
+
+/* ============ LEADERBOARD ============ */
+function saveScoreToLocalStorage(scoreData){
+  try {
+    const today = new Date().toLocaleDateString('vi-VN');
+    const key = 'sat_leaderboard_lines_' + today;
+    let board = JSON.parse(localStorage.getItem(key) || '[]');
+    board.push(scoreData);
+    board.sort(function(a,b){ if(b.correct !== a.correct) return b.correct - a.correct; return a.timeUsed - b.timeUsed; });
+    localStorage.setItem(key, JSON.stringify(board));
+  } catch(e){ console.error('Lỗi lưu bảng xếp hạng', e); }
+}
+function getLeaderboardHTML(){
+  try {
+    const today = new Date().toLocaleDateString('vi-VN');
+    const key = 'sat_leaderboard_lines_' + today;
+    const board = JSON.parse(localStorage.getItem(key) || '[]');
+    if(board.length === 0) return '';
+    const fmtTime = function(sec){ return String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0'); };
+    let html = '<div class="result-section-title"><span class="icon">🏆</span> Bảng xếp hạng hôm nay ('+today+')</div><div style="overflow-x:auto;margin-bottom:22px;"><table class="topic-table"><thead><tr><th style="text-align:center">Hạng</th><th style="text-align:center">Bộ đề</th><th style="text-align:center">Kết quả</th><th style="text-align:center">Thời gian</th></tr></thead><tbody>';
+    board.slice(0,10).forEach(function(item,index){
+      const medal = index===0?'🥇':index===1?'🥈':index===2?'🥉':(index+1);
+      const isCurrent = (item.id === currentScoreId);
+      html += '<tr style="'+(isCurrent?'background:#eaf7eb;font-weight:bold;border-left:3px solid #4CAF50':'')+'"><td style="text-align:center;font-size:16px;">'+medal+'</td><td style="text-align:center">Bộ '+item.setNum+'</td><td style="text-align:center;color:'+(item.pct>=80?'#4CAF50':'#1B3A6B')+';font-weight:800;">'+item.correct+'/'+item.total+' ('+item.pct+'%)</td><td style="text-align:center">'+fmtTime(item.timeUsed)+'</td></tr>';
+    });
+    return html + '</tbody></table></div>';
+  } catch(e){ return ''; }
+}
+
+/* ============ RENDER SET SELECTOR ============ */
+function renderSatSetSelector(){
+  const c = document.getElementById('satSetSelector');
+  c.innerHTML = '';
+  Object.keys(SAT_SETS).forEach(function(k){
+    const s = SAT_SETS[k];
+    const card = document.createElement('div');
+    card.className = 'set-card';
+    card.onclick = function(){ startSetTest(parseInt(k)); };
+    card.innerHTML = '<div class="set-badge">SET '+k+'</div><h4>'+s.name+'</h4><p>'+s.desc+'</p><div class="set-meta"><span><strong>30</strong> câu</span><span><strong>45:00</strong> phút</span><span><strong>A–D</strong></span></div><div class="set-start">▶ Bắt đầu làm bài →</div>';
+    c.appendChild(card);
+  });
+}
+
+/* ============ START TEST ============ */
+function startSetTest(setNum){
+  testState = { setNum: setNum, current: 0, answers: new Array(30).fill(null), timeLeft: TEST_DURATION, submitted: false };
+  document.getElementById('satSetSelector').style.display = 'none';
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  document.getElementById('satTestScreen').style.display = 'block';
+  document.getElementById('testSetName').textContent = SAT_SETS[setNum].name;
+  renderNavGrid();
+  renderTestQuestion();
+  startTestTimer();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function startTestTimer(){
+  if(testTimerInterval) clearInterval(testTimerInterval);
+  updateTimerDisplay();
+  testTimerInterval = setInterval(function(){
+    if(!testState || testState.submitted) return;
+    testState.timeLeft--;
+    updateTimerDisplay();
+    if(testState.timeLeft <= 0){ clearInterval(testTimerInterval); testTimerInterval = null; submitTest(true); }
+  }, 1000);
+}
+
+function updateTimerDisplay(){
+  if(!testState) return;
+  const el = document.getElementById('testTimer');
+  const t = Math.max(0, testState.timeLeft);
+  const m = String(Math.floor(t/60)).padStart(2,'0');
+  const s = String(t%60).padStart(2,'0');
+  el.textContent = m+':'+s;
+  el.classList.remove('warning','danger');
+  if(t <= 60) el.classList.add('danger');
+  else if(t <= 300) el.classList.add('warning');
+}
+
+function renderNavGrid(){
+  const grid = document.getElementById('navGrid');
+  grid.innerHTML = '';
+  for(let i=0;i<30;i++){
+    const b = document.createElement('button');
+    b.className = 'nav-cell';
+    b.textContent = i+1;
+    b.onclick = (function(idx){ return function(){ testState.current = idx; renderTestQuestion(); renderNavGrid(); }; })(i);
+    grid.appendChild(b);
+  }
+  updateNavStatus();
+}
+
+function updateNavStatus(){
+  if(!testState) return;
+  document.querySelectorAll('#navGrid .nav-cell').forEach(function(c,i){
+    c.classList.toggle('answered', testState.answers[i] !== null);
+    c.classList.toggle('current', i === testState.current);
+  });
+  const answered = testState.answers.filter(function(a){ return a !== null; }).length;
+  document.getElementById('testProgress').textContent = 'Câu '+(testState.current+1)+' / 30 · Đã trả lời '+answered+'/30';
+}
+
+function renderTestQuestion(){
+  if(!testState) return;
+  const item = SAT_SETS[testState.setNum].questions[testState.current];
+  document.getElementById('testQNum').textContent = testState.current+1;
+  document.getElementById('testQText').innerHTML = item.q;
+  const optsC = document.getElementById('testOptions');
+  optsC.innerHTML = '';
+  item.opts.forEach(function(o,i){
+    const b = document.createElement('button');
+    b.className = 'option';
+    if(testState.answers[testState.current] === i) b.classList.add('selected');
+    b.innerHTML = '<span class="letter">'+letterMap[i]+'</span><span class="opt-text">'+o+'</span>';
+    b.onclick = function(){ selectTestOption(i); };
+    optsC.appendChild(b);
+  });
+  document.getElementById('testQuestionCard').classList.remove('correct','wrong');
+  document.getElementById('btnPrev').disabled = testState.current === 0;
+  document.getElementById('btnNext').textContent = testState.current === 29 ? '📝 Nộp bài' : 'Câu tiếp →';
+  if(window.renderMathInElement){ renderMathInElement(document.getElementById('testQuestionCard'), {delimiters:[{left:'\\(',right:'\\)',display:false}]}); }
+  updateNavStatus();
+}
+
+function selectTestOption(optIdx){
+  if(!testState || testState.submitted) return;
+  testState.answers[testState.current] = optIdx;
+  document.querySelectorAll('#testOptions .option').forEach(function(o,i){ o.classList.toggle('selected', i === optIdx); });
+  updateNavStatus();
+}
+
+function goToQuestion(i){ if(!testState || i<0 || i>29) return; testState.current = i; renderTestQuestion(); }
+
+/* ============ BUTTON WIRING ============ */
+document.getElementById('btnPrev').onclick = function(){ if(testState) goToQuestion(testState.current - 1); };
+document.getElementById('btnNext').onclick = function(){
+  if(!testState) return;
+  if(testState.current === 29) submitTest(false);
+  else goToQuestion(testState.current + 1);
+};
+document.getElementById('btnQuitTest').onclick = function(){
+  let ok = true;
+  try { ok = window.confirm('Bạn có chắc muốn thoát? Bài làm sẽ không được lưu.'); } catch(e){ ok = true; }
+  if(ok === false) return;
+  if(testTimerInterval){ clearInterval(testTimerInterval); testTimerInterval = null; }
+  testState = null;
+  document.getElementById('satTestScreen').style.display = 'none';
+  document.getElementById('satSetSelector').style.display = 'grid';
+};
+document.getElementById('btnSubmitTest').onclick = function(){ submitTest(false); };
+document.getElementById('btnForceResult').onclick = function(){
+  if(!testState || testState.submitted) return;
+  submitTest(true);
+};
+
+/* ============ SUBMIT TEST ============ */
+function submitTest(auto){
+  if(!testState || testState.submitted) return;
+
+  if(!auto){
+    const unanswered = testState.answers.filter(function(a){ return a === null; }).length;
+    if(unanswered > 0){
+      let ok = true;
+      try { ok = window.confirm('Bạn còn ' + unanswered + ' câu chưa trả lời. Vẫn nộp bài?'); } catch(e){ ok = true; }
+      if(ok === false) return;
+    }
+  }
+
+  testState.submitted = true;
+  if(testTimerInterval){ clearInterval(testTimerInterval); testTimerInterval = null; }
+
+  try {
+    const questions = SAT_SETS[testState.setNum].questions;
+    let correct = 0;
+    testState.answers.forEach(function(ans,i){ if(ans === questions[i].ans) correct++; });
+    const timeUsed = TEST_DURATION - testState.timeLeft;
+    currentScoreId = Date.now().toString();
+    saveScoreToLocalStorage({
+      id: currentScoreId,
+      setNum: testState.setNum, correct: correct, total: questions.length,
+      pct: Math.round(correct / questions.length * 100), timeUsed: timeUsed
+    });
+  } catch(e){ console.error('Lỗi lưu điểm:', e); }
+
+  document.getElementById('satTestScreen').style.display = 'none';
+
+  try {
+    renderResult();
+  } catch(e){
+    console.error('Lỗi render kết quả:', e);
+    showBasicResult(e);
+  }
+
+  const rs = document.getElementById('satResultScreen');
+  if(rs){
+    rs.style.display = 'block';
+    if(!rs.innerHTML || rs.innerHTML.trim() === ''){
+      showBasicResult(new Error('Empty content'));
+    }
+  }
+
+  try { window.scrollTo({top:0,behavior:'smooth'}); } catch(e){ window.scrollTo(0,0); }
+  try { playFanfare(); } catch(e){}
+}
+
+function showBasicResult(err){
+  const c = document.getElementById('satResultScreen');
+  if(!c) return;
+  const questions = (testState && SAT_SETS[testState.setNum]) ? SAT_SETS[testState.setNum].questions : [];
+  let correct = 0;
+  if(testState && questions.length){
+    testState.answers.forEach(function(ans,i){ if(ans === questions[i].ans) correct++; });
+  }
+  const total = questions.length || 30;
+  const pct = Math.round(correct / total * 100);
+  c.innerHTML =
+    '<div class="card" style="border-left:6px solid #4CAF50">' +
+    '<h3>✅ Đã hoàn thành bài thi</h3>' +
+    '<div style="display:flex;gap:24px;align-items:center;margin:20px 0;flex-wrap:wrap">' +
+    '<div style="background:#EAF0F9;padding:20px 32px;border-radius:12px;text-align:center">' +
+    '<div style="font-size:42px;font-weight:800;color:#1B3A6B">' + correct + '</div>' +
+    '<div style="font-size:14px;color:#5b6778">/ ' + total + ' câu đúng</div>' +
+    '</div>' +
+    '<div style="background:linear-gradient(135deg,#1B3A6B,#2C5AA0);padding:20px 32px;border-radius:12px;text-align:center;color:#fff">' +
+    '<div style="font-size:42px;font-weight:800;color:#F5B400">' + pct + '%</div>' +
+    '<div style="font-size:14px;opacity:.9">chính xác</div>' +
+    '</div>' +
+    '</div>' +
+    '<p style="color:#E53935;font-size:13px;margin-top:10px">⚠ Chi tiết phân tích không hiển thị: ' + (err && err.message ? err.message : 'Lỗi không xác định') + '</p>' +
+    '<div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">' +
+    '<button class="btn btn-primary" onclick="backToSetSelector()">📚 Chọn bộ khác</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'knowledge\')">📖 Ôn lý thuyết</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'practice\')">✏️ Luyện tập</button>' +
+    '</div></div>';
+  c.style.display = 'block';
+}
+
+/* ============ RENDER RESULT CHI TIẾT ============ */
+function renderResult(){
+  const c = document.getElementById('satResultScreen');
+  if(!c) return;
+  c.style.display = 'block';
+
+  const setNum = testState.setNum;
+  const questions = SAT_SETS[setNum].questions;
+  const autoSubmitted = testState.timeLeft <= 0;
+
+  let correct = 0, wrong = 0, unanswered = 0;
+  const topicStat = {};
+  Object.keys(TOPICS).forEach(function(k){ topicStat[k] = { correct: 0, total: 0 }; });
+  const wrongList = [];
+
+  questions.forEach(function(item,i){
+    const ans = testState.answers[i];
+    topicStat[item.topic].total++;
+    if(ans === null){ unanswered++; wrongList.push({ idx: i, item: item, yourAns: null }); }
+    else if(ans === item.ans){ correct++; topicStat[item.topic].correct++; }
+    else { wrong++; wrongList.push({ idx: i, item: item, yourAns: ans }); }
+  });
+
+  const total = questions.length;
+  const pct = Math.round(correct / total * 100);
+  const estimatedSAT = Math.min(800, Math.max(200, Math.round(200 + (correct/total)*600)));
+  const timeUsed = TEST_DURATION - testState.timeLeft;
+  const tm = String(Math.floor(timeUsed/60)).padStart(2,'0');
+  const ts = String(timeUsed%60).padStart(2,'0');
+  const answered = correct + wrong;
+  const avgTime = answered > 0 ? Math.round(timeUsed/answered) : 0;
+  const avgTimeStr = Math.floor(avgTime/60) + ':' + String(avgTime%60).padStart(2,'0');
+
+  let level, levelColor, levelIcon, levelDesc, levelAdvice;
+  if(pct >= 90){ level="XUẤT SẮC"; levelColor="#4CAF50"; levelIcon="🏆"; levelDesc="Kiến thức về đường thẳng và đường tròn rất vững vàng!"; levelAdvice="Luyện đề khó hơn để duy trì phong độ."; }
+  else if(pct >= 75){ level="TỐT"; levelColor="#2C5AA0"; levelIcon="⭐"; levelDesc="Nắm tốt kiến thức cơ bản và nâng cao."; levelAdvice="Khắc phục chủ đề dưới 80% để đạt 700+."; }
+  else if(pct >= 60){ level="KHÁ"; levelColor="#E8A317"; levelIcon="📈"; levelDesc="Nền tảng khá nhưng còn sai sót."; levelAdvice="Luyện thêm dạng khoảng cách và vị trí tương đối."; }
+  else if(pct >= 40){ level="TRUNG BÌNH"; levelColor="#FF9800"; levelIcon="📚"; levelDesc="Cần củng cố lý thuyết."; levelAdvice="Ôn kỹ mục I, II, III, IV và làm lại Nhóm 1."; }
+  else { level="CẦN CỐ GẮNG"; levelColor="#E53935"; levelIcon="🔧"; levelDesc="Cần xây dựng lại nền tảng."; levelAdvice="Đọc kỹ Kiến thức, ghi nhớ công thức vàng ở mục VII."; }
+
+  let timeEval, timeIcon, timeColor;
+  if(timeUsed <= TEST_DURATION*0.7){ timeEval="Quản lý thời gian xuất sắc"; timeIcon="🚀"; timeColor="#4CAF50"; }
+  else if(timeUsed <= TEST_DURATION*0.9){ timeEval="Quản lý thời gian tốt"; timeIcon="⏱️"; timeColor="#2C5AA0"; }
+  else if(timeUsed < TEST_DURATION){ timeEval="Sát giờ — cần tăng tốc"; timeIcon="⏰"; timeColor="#E8A317"; }
+  else { timeEval="Hết giờ"; timeIcon="🚨"; timeColor="#E53935"; }
+
+  const topicList = Object.keys(topicStat)
+    .filter(function(k){ return topicStat[k].total > 0; })
+    .map(function(k){ return { key: k, name: TOPICS[k], correct: topicStat[k].correct, total: topicStat[k].total, pct: Math.round(topicStat[k].correct/topicStat[k].total*100) }; })
+    .sort(function(a,b){ return a.pct - b.pct; });
+
+  const weakTopics = topicList.filter(function(t){ return t.pct < 60; });
+  const mediumTopics = topicList.filter(function(t){ return t.pct >= 60 && t.pct < 80; });
+  const strongTopics = topicList.filter(function(t){ return t.pct >= 80; });
+
+  let roadmapHTML = '';
+  if(weakTopics.length > 0){
+    roadmapHTML += '<div class="roadmap-phase phase-1"><div class="phase-num">1</div><div class="phase-content"><h4>Giai đoạn 1: Củng cố kiến thức nền tảng <span class="phase-time">⏳ 1–3 ngày</span></h4><ul>';
+    weakTopics.forEach(function(t){ roadmapHTML += '<li><strong>' + t.name + '</strong> (' + t.correct + '/' + t.total + ' = ' + t.pct + '%) — ' + TOPIC_RECOMMENDATIONS[t.key] + '</li>'; });
+    roadmapHTML += '</ul><div class="phase-actions"><button class="btn btn-outline btn-sm" onclick="switchTab(\'knowledge\')">📖 Ôn lý thuyết</button><button class="btn btn-outline btn-sm" onclick="switchTab(\'practice\')">✏️ Luyện nhóm cơ bản</button></div></div></div>';
+  }
+  if(mediumTopics.length > 0){
+    roadmapHTML += '<div class="roadmap-phase phase-2"><div class="phase-num">2</div><div class="phase-content"><h4>Giai đoạn 2: Luyện tập nâng cao <span class="phase-time">⏳ 3–5 ngày</span></h4><ul>';
+    mediumTopics.forEach(function(t){ roadmapHTML += '<li><strong>' + t.name + '</strong> (' + t.correct + '/' + t.total + ' = ' + t.pct + '%) — Cần thêm bài tập trung bình–khó.</li>'; });
+    roadmapHTML += '</ul><div class="phase-actions"><button class="btn btn-outline btn-sm" onclick="switchTab(\'practice\')">✏️ Luyện nhóm trung bình</button><button class="btn btn-primary btn-sm" onclick="restartSameSet()">🔄 Làm lại bộ đề này</button></div></div></div>';
+  }
+  roadmapHTML += '<div class="roadmap-phase phase-3"><div class="phase-num">3</div><div class="phase-content"><h4>Giai đoạn 3: ' + (strongTopics.length > 0 ? 'Duy trì & mở rộng' : 'Luyện đề tổng hợp') + ' <span class="phase-time">⏳ Liên tục</span></h4><ul>';
+  if(strongTopics.length > 0){
+    strongTopics.forEach(function(t){ roadmapHTML += '<li><strong>' + t.name + '</strong> (' + t.correct + '/' + t.total + ' = ' + t.pct + '%) — Duy trì phong độ.</li>'; });
+  } else {
+    roadmapHTML += '<li>Luyện các bộ đề khác để đa dạng dạng bài.</li>';
+  }
+  roadmapHTML += '</ul><div class="phase-actions"><button class="btn btn-outline btn-sm" onclick="backToSetSelector()">📚 Chọn bộ khác</button><button class="btn btn-outline btn-sm" onclick="switchTab(\'sat\')">⏱️ Luyện đề khác</button></div></div></div>';
+
+  let topicTableHTML = '';
+  topicList.forEach(function(t){
+    let cls = '', status = '', statusColor = '';
+    if(t.pct >= 80){ status = '✅ Vững'; statusColor = '#4CAF50'; }
+    else if(t.pct >= 60){ cls = 'warn'; status = '⚠ Cần luyện'; statusColor = '#E8A317'; }
+    else { cls = 'bad'; status = '🔴 Yếu'; statusColor = '#E53935'; }
+    topicTableHTML += '<tr><td><strong>' + t.name + '</strong></td><td><div class="topic-bar-cell"><div class="topic-bar"><div class="topic-bar-fill ' + cls + '" style="width:' + t.pct + '%"></div></div><span style="min-width:44px;font-weight:700;color:#5b6778">' + t.pct + '%</span></div></td><td style="text-align:right"><span class="topic-score">' + t.correct + '/' + t.total + '</span></td><td style="text-align:center"><strong style="color:' + statusColor + ';font-size:13px">' + status + '</strong></td></tr>';
+    topicTableHTML += '<tr><td colspan="4" style="padding:0 16px 12px;border-bottom:1px solid #eef2f8"><div class="topic-recommend">📌 <strong>Gợi ý:</strong> ' + TOPIC_RECOMMENDATIONS[t.key] + '</div></td></tr>';
+  });
+
+  let wrongHTML = '';
+  if(wrongList.length > 0){
+    wrongHTML += '<div class="result-section-title"><span class="icon" style="background:#fdeaea;color:#E53935">🔍</span> Phân tích ' + wrongList.length + ' câu sai / bỏ trống</div>';
+    wrongList.forEach(function(w){
+      const item = w.item;
+      const cls = w.yourAns === null ? 'unanswered' : '';
+      const yourText = w.yourAns === null ? '— Không trả lời —' : item.opts[w.yourAns];
+      wrongHTML += '<div class="wrong-item ' + cls + '">' +
+        '<div class="wrong-head"><div class="wrong-num">' + (w.idx+1) + '</div><div class="wrong-q">' + item.q + '<div><span class="topic-tag">' + TOPICS[item.topic] + '</span></div></div></div>' +
+        '<div class="ans-row">' +
+        '<div class="ans-box your"><div class="lbl">Bạn chọn</div><div class="val">' + (w.yourAns === null ? '—' : letterMap[w.yourAns] + '. ') + yourText + '</div></div>' +
+        '<div class="ans-box correct"><div class="lbl">Đáp án đúng</div><div class="val">' + letterMap[item.ans] + '. ' + item.opts[item.ans] + '</div></div>' +
+        '</div>' +
+        '<div class="exp-box"><div class="lbl">🧮 Lời giải</div>' + item.exp + '</div>' +
+        '<div class="review-box">📖 ' + item.review + '</div>' +
+        '</div>';
+    });
+  } else {
+    wrongHTML = '<div class="roadmap" style="border-left-color:#4CAF50"><h3>🎯 Tất cả câu trả lời đều chính xác!</h3><p style="font-size:14px;color:#5b6778">Không có câu nào sai. Em đã sẵn sàng cho các bộ đề khó hơn!</p></div>';
+  }
+
+  c.innerHTML =
+    '<div class="result-hero">' +
+    '<div>' +
+    '<h2>🎉 Hoàn thành ' + SAT_SETS[setNum].name + '!</h2>' +
+    '<p>Bạn đã làm ' + total + ' câu trong ' + tm + ':' + ts + '. ' + (autoSubmitted ? '⏰ Hết giờ! ' : '') + (unanswered > 0 ? 'Còn ' + unanswered + ' câu chưa trả lời.' : '') + '</p>' +
+    '</div>' +
+    '<div class="result-score"><div class="num">' + correct + '</div><div class="den">/ ' + total + ' câu đúng</div><div class="pct">' + pct + '%</div></div>' +
+    '</div>' +
+
+    '<div class="level-banner" style="border-left-color:' + levelColor + '">' +
+    '<div class="level-icon" style="background:' + levelColor + '">' + levelIcon + '</div>' +
+    '<div class="level-content"><h3 style="color:' + levelColor + '">Đánh giá: ' + level + '</h3><p>' + levelDesc + '</p><div class="level-advice"><strong>💡 Định hướng:</strong> ' + levelAdvice + '</div></div>' +
+    '</div>' +
+
+    '<div class="result-stats">' +
+    '<div class="stat-box green"><div class="label">✅ Đúng</div><div class="value">' + correct + '</div><div class="sub">Chiếm ' + pct + '%</div></div>' +
+    '<div class="stat-box red"><div class="label">❌ Sai</div><div class="value">' + wrong + '</div><div class="sub">Cần xem lại</div></div>' +
+    '<div class="stat-box yellow"><div class="label">⚠ Bỏ trống</div><div class="value">' + unanswered + '</div><div class="sub">Chưa trả lời</div></div>' +
+    '<div class="stat-box"><div class="label">🎯 SAT ước lượng</div><div class="value">' + estimatedSAT + '</div><div class="sub">/ 800</div></div>' +
+    '</div>' +
+
+    getLeaderboardHTML() +
+
+    '<div class="result-section-title"><span class="icon">⏱</span> Phân tích thời gian</div>' +
+    '<div class="time-analysis">' +
+    '<div class="time-block"><div class="tb-icon">⏰</div><div class="tb-content"><div class="tb-label">Tổng thời gian</div><div class="tb-value">' + tm + ':' + ts + '</div><div class="tb-desc">/ 45:00</div></div></div>' +
+    '<div class="time-block"><div class="tb-icon">⚡</div><div class="tb-content"><div class="tb-label">Trung bình / câu</div><div class="tb-value">' + avgTimeStr + '</div><div class="tb-desc">Mục tiêu: ≤ 1:30</div></div></div>' +
+    '<div class="time-block"><div class="tb-icon" style="background:' + timeColor + '22;color:' + timeColor + '">' + timeIcon + '</div><div class="tb-content"><div class="tb-label">Đánh giá</div><div class="tb-value" style="color:' + timeColor + ';font-size:15px">' + timeEval + '</div><div class="tb-desc">' + (timeUsed < TEST_DURATION ? 'Còn dư ' + Math.floor((TEST_DURATION-timeUsed)/60) + ':' + String((TEST_DURATION-timeUsed)%60).padStart(2,'0') : 'Đã dùng hết') + '</div></div></div>' +
+    '</div>' +
+
+    '<div class="result-section-title"><span class="icon">📊</span> Phân tích theo chủ đề</div>' +
+    '<table class="topic-table"><thead><tr><th style="width:28%">Chủ đề</th><th style="width:38%">Tỉ lệ đúng</th><th style="width:14%;text-align:right">Số câu</th><th style="width:20%;text-align:center">Trạng thái</th></tr></thead><tbody>' + topicTableHTML + '</tbody></table>' +
+
+    '<div class="roadmap"><h3>🗺️ Lộ trình ôn tập cá nhân hóa</h3><p class="roadmap-sub">Dựa trên kết quả của em, đây là lộ trình được thiết kế riêng:</p>' + roadmapHTML + '</div>' +
+
+    wrongHTML +
+
+    '<div class="result-actions">' +
+    '<button class="btn btn-primary" onclick="restartSameSet()">🔄 Làm lại ' + SAT_SETS[setNum].name + '</button>' +
+    '<button class="btn btn-outline" onclick="backToSetSelector()">📚 Chọn bộ khác</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'knowledge\')">📖 Ôn lý thuyết</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'practice\')">✏️ Luyện tập thêm</button>' +
+    '</div>';
+
+  if(window.renderMathInElement){ renderMathInElement(c, {delimiters:[{left:'\\(',right:'\\)',display:false}]}); }
+}
+
+function restartSameSet(){
+  if(!testState) return;
+  const setNum = testState.setNum;
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  startSetTest(setNum);
+}
+
+function backToSetSelector(){
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  document.getElementById('satTestScreen').style.display = 'none';
+  document.getElementById('satSetSelector').style.display = 'grid';
+  testState = null;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============ INIT ============ */
+renderSatSetSelector();
+
+window.addEventListener('load', function(){
+  if(window.renderMathInElement){
+    renderMathInElement(document.body, {delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});
+  }
+});
+
+console.log('[SAT Lines/Circles Web] ✅ Loaded. renderResult:', typeof renderResult, '| submitTest:', typeof submitTest);
+</script>
+</body>
+</html>
